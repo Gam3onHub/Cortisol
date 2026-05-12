@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=400, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Parabéns</title>
+  <link rel="stylesheet" href="style.css?v=2" />
+</head>
+<body style="opacity:0">
+<div class="app">
+
+  <main class="content" id="content">
+    <div class="menu05-layout">
+      <p class="menu05-text" id="congrats-text"></p>
+      <div class="menu05-row">
+
+        <div class="menu05-menu" id="levelMenu"></div>
+
+        <div style="display:flex; flex-direction:column; justify-content:space-between; align-items:flex-end; flex:1;">
+          <img class="menu05-img" src="nofffa6.svg">
+          <button class="menu05-button" id="linksBtn"></button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+<nav class="bottom-nav" id="bottomNav">
+  <img class="nav-bg" id="nav-bg" src="close-bg.svg" alt="">
+  <button class="nav-btn home-btn" onclick="closeApp()">
+    <img src="close.svg" alt="Close">
+  </button>
+</nav>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const lang = (params.get("lang") || "pt").toLowerCase();
+
+// CONGRATS TEXT
+const text = {
+  pt: "Parabéns por completar <br>esta leitura!<br><br>Aprender sobre a nossa saúde <br>é sempre tempo bem investido <br>e aumenta o nosso amor próprio!",
+  en: "Congratulations on completing <br>this reading!<br><br>Learning about our health <br>is always time well invested <br>and increases our self-love!"
+};
+document.getElementById("congrats-text").innerHTML = text[lang] || text.pt;
+
+// LINKS BUTTON
+const btnText = { pt: "Links Úteis", en: "Useful Links" };
+const linksBtn = document.getElementById("linksBtn");
+linksBtn.innerText = btnText[lang] || btnText.pt;
+linksBtn.onclick = () => {
+  window.location.href = `menu06.html?lang=${lang}`;
+};
+
+// LEVEL COINS (1–4)
+const menu = document.getElementById("levelMenu");
+[4, 3, 2, 1].forEach((n) => {
+  const item = document.createElement("div");
+  item.className = "menu05-level";
+
+  const coinWrap = document.createElement("div");
+  coinWrap.className = "menu05-coin-wrap";
+
+  const coin = document.createElement("img");
+  coin.src = "coin.svg";
+  coin.className = "menu05-coin";
+
+  const number = document.createElement("span");
+  number.className = "menu05-level-number";
+  number.innerText = n;
+
+  coinWrap.appendChild(coin);
+  coinWrap.appendChild(number);
+  item.appendChild(coinWrap);
+
+  item.onclick = () => {
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+      window.location.href = `app.html?level=${n - 1}&lang=${lang}&from=hub`;
+    }, 300);
+  };
+
+  menu.appendChild(item);
+});
+
+window.goHome = () => { window.location.href = "index.html"; };
+
+
+document.body.style.transition = "opacity 0.3s ease";
+document.body.style.opacity = "1";
+
+
+
+
+window.closeApp = () => {
+  window.close();
+};
+
+
+</script>
+</body>
+</html>

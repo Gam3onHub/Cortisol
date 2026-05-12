@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=400, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Mind App</title>
+
+  <!-- LINK CSS FILE -->
+<link rel="stylesheet" id="main-stylesheet" href="style.css" />
+</head>
+
+<body style="opacity:0">
+
+
+
+
+  <!-- MAIN APP CONTAINER -->
+  <div class="app">
+
+    <!-- CONTENT AREA -->
+<main class="content" id="content"></main>
+
+
+
+
+
+<!-- PROGRESS BAR -->
+<div class="progress-container">
+  <div class="progress-bar"></div>
+</div>
+
+
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav" id="bottomNav">
+      <img class="nav-bg" id="nav-bg" src="three-buttons-locked.svg" alt="">
+
+      <button class="nav-btn back-btn">
+        <img src="left.svg" alt="Previous">
+      </button>
+
+      <button class="nav-btn home-btn" onclick="goHome()">
+        <img src="home.svg" alt="Home">
+      </button>
+
+      <button class="nav-btn hub-btn" id="hub-btn" onclick="goToHub()">
+        <img src="all-levels.svg" alt="All Levels">
+      </button>
+
+      <button class="nav-btn next-btn">
+        <img src="right.svg" alt="Next">
+      </button>
+    </nav>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+window.addEventListener("load", async () => {
+  const contentArea = document.getElementById("content");
+  const bar = document.querySelector(".progress-bar");
+  const progressContainer = document.querySelector(".progress-container");
+  if (!contentArea || !bar) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const lang = (params.get("lang") || "pt").toLowerCase();
+  const fromHub = params.get("from") === "hub";
+
+  if (fromHub) {
+    document.getElementById("bottomNav").classList.add("has-hub");
+    document.getElementById("nav-bg").src = "three-buttons-locked.svg";
+  }
+
+  const res = await fetch("data.json?t=" + Date.now());
+  const data = await res.json();
+  const levels = data.levels;
+
+  let levelIndex = parseInt(params.get("level") ?? "0", 10);
+  if (!levels[levelIndex]) levelIndex = 0;
+
+  let current = parseInt(params.get("screen") ?? "0", 10);
+
+  const backBtn = document.querySelector(".bottom-nav img[alt='Previous']").closest("button");
+  const nextBtn = document.querySelector(".bottom-nav img[alt='Next']").closest("button");
+  const bottomNav = document.getElementById("bottomNav");
+
+  function render(i) {
+    current = i;
+
+    const level = levels[levelIndex];
+    const screen = level[i];
+    const screenId = screen?.SCREEN_ID;
+
+    contentArea.classList.remove("l4-s21-layout", "image-after-title", "win-screen");
+    if (screenId === "L4_S21") contentArea.classList.add("l4-s21-layout");
+
+    const content = screen?.[lang]?.content || screen?.content || [];
+    contentArea.classList.add("fade-out");
+
+    setTimeout(() => {
+      contentArea.innerHTML = "";
+
+      // WIN SCREEN — handle everything here, inside the setTimeout
+      if (screenId === "L4_S19") {
+        contentArea.classList.add("win-screen");
+        bottomNav.style.display = "none";
+        progressContainer.style.display = "none";
+
+        content.forEach(block => {
+          let el;
+          if (block.type === "image" && block.value) {
+            el = document.createElement("img");
+            el.src = block.value + "?v=" + Date.now();
+            if (block.class) el.classList.add(block.class);
+          }
+          if (el) contentArea.appendChild(el);
+        });
+
+        contentArea.classList.remove("fade-out");
+
+        setTimeout(() => {
+          document.body.style.transition = "opacity 0.8s ease";
+          document.body.style.opacity = "0";
+          setTimeout(() => {
+            window.location.href = "menu05.html?lang=" + lang;
+          }, 800);
+        }, 6000);
+
+        return; // stop here, skip all nav logic below
+      }
+
+      // NORMAL SCREENS
+      const levelLabel = document.createElement("div");
+      levelLabel.className = "level-indicator";
+      levelLabel.innerText = lang === "pt" ? `Nível ${levelIndex + 1}` : `Level ${levelIndex + 1}`;
+      contentArea.appendChild(levelLabel);
+
+      content.forEach(block => {
+        let el;
+        if (block.type === "title") {
+          el = document.createElement("h1");
+          el.innerHTML = block.value;
+          if (block.style === "highlight") el.classList.add("special-title");
+        }
+        else if (block.type === "text") {
+          el = document.createElement("p");
+          el.innerHTML = block.value;
+          if (block.class) el.classList.add(block.class);
+        }
+        else if (block.type === "image" && block.value) {
+          el = document.createElement("img");
+          el.src = block.value + "?v=" + Date.now();
+          if (block.class) el.classList.add(block.class);
+        }
+        if (el) contentArea.appendChild(el);
+      });
+
+      // PROGRESS BAR
+      progressContainer.style.display = "block";
+      bar.style.width = ((i + 1) / levels[levelIndex].length) * 100 + "%";
+
+      // NAV BG LOGIC
+      const isHub = bottomNav.classList.contains("has-hub");
+      const navBg = document.getElementById("nav-bg");
+      const isLastScreen = i === level.length - 1;
+
+      if (isHub) {
+        if (i === 0) {
+          bottomNav.classList.remove("last-screen");
+          backBtn.style.display = "flex";
+          backBtn.style.visibility = "hidden";
+          nextBtn.style.display = "flex";
+          nextBtn.style.visibility = "visible";
+          navBg.src = "three-button-locked-forward.svg";
+        } else if (isLastScreen) {
+          bottomNav.classList.add("last-screen");
+          backBtn.style.display = "flex";
+          backBtn.style.visibility = "visible";
+          nextBtn.style.display = "none";
+          navBg.src = "two-button-locked-back.svg";
+        } else {
+          bottomNav.classList.remove("last-screen");
+          backBtn.style.display = "flex";
+          backBtn.style.visibility = "visible";
+          nextBtn.style.display = "flex";
+          nextBtn.style.visibility = "visible";
+          navBg.src = "three-buttons-locked.svg";
+        }
+      } else {
+        nextBtn.style.display = "flex";
+        nextBtn.style.visibility = "visible";
+        if (i === 0) {
+          backBtn.style.display = "flex";
+          backBtn.style.visibility = "hidden";
+          navBg.src = "two-button-locked-forward.svg";
+        } else {
+          backBtn.style.display = "flex";
+          backBtn.style.visibility = "visible";
+          navBg.src = "three-buttons-locked.svg";
+        }
+      }
+
+      contentArea.classList.remove("fade-out");
+    }, 100);
+  }
+
+  backBtn.onclick = () => {
+    if (current > 0) render(--current);
+  };
+
+  nextBtn.onclick = () => {
+    const level = levels[levelIndex];
+    if (current < level.length - 1) {
+      render(++current);
+      return;
+    }
+    const nextLevel = levelIndex + 1;
+    if (nextLevel < levels.length) {
+      window.location.href = `menu0${nextLevel + 1}.html?lang=${lang}`;
+    } else {
+      window.location.href = "menu05.html?lang=" + lang;
+    }
+  };
+
+  render(current);
+  document.querySelector(".bottom-nav").style.opacity = "1";
+  document.body.style.transition = "opacity 0.3s ease";
+  document.body.style.opacity = "1";
+});
+
+window.goHome = () => {
+  window.location.href = "index.html";
+};
+
+window.goToHub = () => {
+  const lang = new URLSearchParams(window.location.search).get("lang") || "pt";
+  document.body.style.transition = "opacity 0.4s ease";
+  document.body.style.opacity = "0";
+  setTimeout(() => {
+    window.location.href = `menu05.html?lang=${lang}`;
+  }, 400);
+};
+</script>
+
+
+
+
+<script>
+  // Force reload CSS during development
+  document.getElementById("main-stylesheet").href = "style.css?v=" + Date.now();
+</script>
+
+
+
+</body>
+</html>

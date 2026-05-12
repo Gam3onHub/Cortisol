@@ -1,0 +1,1146 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* === SCREEN FADE TRANSITION === */
+
+
+.content {
+  transition: opacity 0.9s ease;
+}
+
+.content.fade-out {
+  opacity: 0;
+}
+
+
+
+html {
+  font-size: 16px;
+}
+
+/* ===== BODY & GLOBAL ===== */
+body {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #EDEDED, #DADCF0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: white;
+  overflow-x: hidden;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+/* ===== APP CONTAINER ===== */
+.app {
+  width: 100%;
+  max-width: 400px;
+  inset: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-height: 900px; /* prevents huge stretching on desktop */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2); /* optional */
+  position: fixed;
+  overflow: hidden;
+
+  padding: 12px;
+  background: linear-gradient(to bottom, #EDEDED, #DADCF0);
+}
+
+
+/* background layer: */
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("zen.jpg"); /* your image */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.65; /* 👈 adjust this */
+  z-index: 0;
+}
+
+
+
+
+.app > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+/* ===== HOME / SPLASH SCREEN ===== */
+.home-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("bgbrain.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 25vh;
+  padding-bottom: 30px;
+  align-items: center;
+  color: white;
+}
+
+/* ===== LANGUAGE BUTTONS ===== */
+.language-buttons {
+  margin-top: auto;
+  margin-bottom: 150px;
+  display: flex;
+  gap: 60px;
+}
+
+.lang-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease;
+}
+
+.lang-btn:active {
+  transform: scale(0.95);
+}
+
+.lang-btn img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+}
+
+.lang-btn:disabled {
+  opacity: 0.4;\
+  cursor: not-allowed;
+}
+
+/* ===== MAIN CONTENT AREA + FLEX ORDER SYSTEM ===== */
+.content {
+  flex: 1;
+  min-height: 0;
+  max-height: 777px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  overflow: visible;
+  padding-top: 10px;
+
+  /* BORDER RADIUS HIGHLIGHT*/
+  background: rgba(245, 245, 245, 0.6);
+  border: 3px solid rgba(254,253,223,0.9);
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  backdrop-filter: blur(11px); /* adds “glass card” look */
+}
+
+
+
+
+.content h1,
+.content h1.special-title {
+
+  margin-top: 35px;   /* 👈 THIS fixes overlap properly */
+  padding: 18px 20px; /*TOP / RIGHT / BOTTOM / LEFT  */
+  width: 100%;
+  font-size: 1.5rem; /* CONTROLS FONT SIZE FOR THE SCREEN TITLES */
+  max-width: 330px;
+}
+
+/* TEXT */
+.content p {
+  width: 100%;
+  max-width: 340px;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 15px 0 15px; /*TOP / RIGHT / BOTTOM / LEFT  */
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  line-height: 1.4;
+  gap: clamp(10px, 2vh, 20px);
+}
+
+/* ===== GLOBAL CONTENT WIDTH STANDARD (MATCH TEXT) ===== */
+.content-width {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+/* Text block */
+.text-block {
+  /* order: 1; */
+  width: 100%;
+  max-width: 340px;
+  text-align: left;
+  flex-shrink: 0;
+  overflow: visible;
+
+}
+
+.text-block h1 {
+  font-size: clamp(1.5rem, 5vw, 1.5rem);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+
+
+/* Image container - CLEAN VERSION */
+.image-container {
+  width: 100%;
+  text-align: center;
+  margin: 15px 0 20px 0;
+  flex-shrink: 0;
+}
+
+
+
+
+
+
+/* Special layout for Screen 9 (image between title and text) */
+.image-after-title .text-block {
+  order: 1;
+}
+
+.image-after-title .image-container {
+  order: 2;
+}
+
+.image-after-title .text-block p {
+  margin-top: 25px;
+}
+
+/* Special title style (used on Screen 7 and 9) */
+h1.special-title {
+  color: white !important;
+  background-color: #9FACDA;
+
+  padding: 18px 20px;              /* 👈 SAME as normal h1 */
+  border-radius: 12px;
+
+  display: block;             /* 👈 IMPORTANT */
+  width: calc(100% - 30px);   /* 👈 MATCH LEFT+RIGHT padding */
+  margin: 40px auto 20px auto; /* 👈 pushes below Level */
+
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+
+/* ===== NAVIGATION & PROGRESS ===== */
+.nav-btn.disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bottom-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 344px;
+  height: 80px;
+  background: none;
+  border: none;
+  z-index: 10;
+  transition: opacity 0.4s ease-in-out; 
+  opacity: 1;
+  padding: 0;
+  overflow: visible;
+  box-sizing: border-box; /* Ensures no browser-side padding interferes */
+  opacity: 1;
+}
+
+
+/* State when the menu is "hidden" or transitioning */
+.nav-hidden {
+  opacity: 0 !important; /* Ensure it overrides the default opacity: 1 */
+  transform: translateX(-50%); /* Keeps it centered so it doesn't slide */
+  pointer-events: none; 
+}
+
+
+.nav-bg {
+  position: absolute;
+  inset: 0;      /* Forces it to fill the 344x80 perfectly */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: 100% 100%; /* Forces the image to stretch to your exact CSS pixels */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ALL buttons share this base */
+.nav-btn {
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  width: 80px; /* Match the height of the nav for a perfect circle hit area */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+}
+
+
+
+/* 3-INDEPENDENT BUTTON POSITIONS (default) */
+.back-btn  { 
+  left: 4px; /* ← shifts back button horizontally*/
+} 
+
+.home-btn  { 
+  left: 50%; /* ← move home button (left for horizontal & top for vertical shifts) */
+  top: 50%; 
+  transform: translate(-50%, -50%); 
+} 
+
+.next-btn  { 
+  right: 0px; /* ← move forward button */
+} 
+
+.hub-btn   { 
+  display: none; 
+}
+
+
+
+/* 4-button hub positions — calibrated to your 4-button SVG (344px wide) */
+.bottom-nav.has-hub .back-btn  { 
+  left: 4px; 
+}
+
+.bottom-nav.has-hub .home-btn  { 
+  display: none; 
+}
+
+.bottom-nav.has-hub .hub-btn   { 
+  display: flex; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+
+.bottom-nav.has-hub .next-btn  { 
+  right: 0px; 
+}
+
+
+
+/* ARROW ICON INSIDE FORWRAD/ BACK BUTTONS */
+.nav-btn img {
+  width: 55px;
+  height: 55px;
+}
+
+.home-btn img,
+.hub-btn img {
+  width: 45px;
+  height: 45px;
+}
+
+.back-btn img,
+.next-btn img {
+  width: 75px;
+  height: 75px;
+}
+
+.progress-container {
+  position: absolute;
+  bottom: 105px; /* 👈 sits above nav */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 68px);
+  height: 4px;
+  background: black;
+  border-radius: 3px;
+  overflow: visible;
+  z-index: 10;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 30%;
+  background: #FEAA35;
+  box-shadow:  /* 🔥 GLOW EFFECT */
+    0 0 6px rgba(254, 170, 53, 0.7),
+    0 0 12px rgba(254, 170, 53, 0.6),
+    0 0 20px rgba(254, 170, 53, 0.5);
+  animation: progressGlowPulse 2s infinite ease-in-out;
+  transition: width 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== SMALL SCREEN TWEAKS ===== */
+@media (max-height: 700px) {
+  .text-block {
+    margin-top: 1rem;
+  }
+  .image-container {
+    margin: 1rem 0;
+  }
+}
+
+/* ===== MENU STYLES (Menu01 & Menu02) ===== */
+.menu {
+  position: relative;
+  flex: 1;
+  overflow: visible;
+}
+
+.path {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(to bottom, #b3bdea, #8f9bd6);
+  border-radius: 30px;
+  z-index: 1;
+}
+
+.path::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.levels {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+  z-index: 3;
+}
+
+.level {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #f6f6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 4;
+  transition: 0.3s ease;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.level.current {
+  background: #ffeb3b;
+  box-shadow: 0 0 25px #ffeb3b;
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.level.unlocked {
+  background: #ffeb3b;
+}
+
+.level.completed {
+  background: #ffeb3b;
+  box-shadow: 0 0 20px #ffd000,
+              0 0 35px #ffeb3b,
+              0 0 50px rgba(255, 215, 0, 0.8);
+  transform: scale(1.08);
+  opacity: 1;
+  animation: completedPulse 2s infinite ease-in-out;
+}
+
+.level.completed img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(1.15) drop-shadow(0 0 8px #fff);
+}
+
+.level-number {
+  position: absolute;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #afb8be;
+}
+
+.level.locked img {
+  width: 40px;
+  transform: rotate(-15deg);
+}
+
+.dino {
+  position: absolute;
+  bottom: 80px;
+  right: 9px;
+  width: 140px;
+  z-index: 2;
+}
+
+.speech {
+  position: absolute;
+  bottom: 230px;
+  right: -20px;
+  width: 200px;
+  z-index: 6;
+  background: white;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.speech::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 110px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 18px solid white;
+}
+
+/* Menu 02 specific adjustments */
+.menu02 .dino {
+  position: absolute;
+  bottom: 208px;
+  left: -28px;
+  width: 190px;
+  z-index: 1;
+}
+
+.menu02 .speech2 {
+  position: absolute;
+  bottom: 375px;
+  left: -35px;
+  width: 210px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 3;
+}
+
+.speech2::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  right: 75px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 18px solid white;
+}
+
+/* Pulse animation for completed levels */
+@keyframes completedPulse {
+  0%, 100% { box-shadow: 0 0 20px #ffd000, 0 0 35px #ffffff; }
+  50% { box-shadow: 0 0 30px #ffd000, 0 0 55px #ffe557, 0 0 40px rgba(231, 231, 0, 1.5); }
+}
+
+/* List styles */
+.text-block ul {
+  margin: 35px 0 35px 20px;
+  padding: 0;
+  list-style-type: circle;
+  text-align: left;
+}
+
+.text-block li {
+  margin-bottom: 18px;
+  margin-left: 35px;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+.text-block ol {
+  margin: 35px 0 8px 30px;
+  padding: 0;
+  list-style-type: decimal;
+}
+
+.text-block li ol {
+  margin-top: 6px;
+  margin-left: 35px;
+}
+
+/* Pointer events for menu */
+.menu, .levels, .level {
+  pointer-events: auto;
+}
+
+
+
+
+/* TITLE "Sem interrupção, o ciclo repete-se." */
+
+.title-highlight {
+  background: #9FACDA;   
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+
+
+
+
+/* ==================== MENU 03 STYLES ==================== */
+.menu03 .dino {
+  bottom: 275px;        /* Adjust these values */
+  left: -20px;
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+}
+
+.menu03 .speech3 {
+  position: absolute;
+  top: 165px;
+  left: -60px;
+  width: 320px;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 3;
+  max-width: 220px;
+  text-align: left;
+}
+
+.speech3::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 150px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 18px solid white;
+}
+
+
+
+
+/* ==================== MENU 04 STYLES ==================== */
+.menu04 .dino {
+  bottom: 348px;        /* Adjust these values */
+  left: -29px;
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+}
+
+.menu04 .speech4 {
+  position: absolute;
+  top: 100px;
+  left: -20px;
+  width: 200px;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 3;
+  max-width: 220px;
+  text-align: left;
+}
+
+.speech4::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 70px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 18px solid white;
+}
+
+
+
+
+/* WORD FILL SPAN TAG */
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+/* SPECIFIC COLORS */
+.prob1 {
+  background-color: #FFB3B3;
+
+}
+
+.solu1 {
+  background-color: #AEFFC4;
+
+}
+
+
+
+
+
+/* PULSE ANIMATION FOR PROGRESS BAR */
+@keyframes progressGlowPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 6px rgba(254, 170, 53, 0.7),
+      0 0 12px rgba(254, 170, 53, 0.6),
+      0 0 20px rgba(254, 170, 53, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px rgba(254, 170, 53, 0.9),
+      0 0 18px rgba(254, 170, 53, 0.8),
+      0 0 30px rgba(254, 170, 53, 0.7);
+  }
+}
+
+
+
+.content-inner {
+  transform: scale(0.95);
+  transform-origin: top center;
+}
+
+
+
+
+
+/* ================= MENU05 FIX ================= */
+
+/* LEFT MENU - full height of red area */
+.menu05-menu {
+  width: 92px;
+  height: 45vh;
+  background: linear-gradient(to bottom, #b3bdea, #8f9bd6);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* IMPORTANT */
+  align-items: center;
+
+  padding: 18px 0;
+  position: relative;
+  grid-row: 1 / span 2;
+
+  z-index: 0;
+  overflow: visible;
+}
+
+
+/* RIGHT COLUMN */
+.menu05-row {
+  display: flex;
+  justify-content: center; /* This horizontally centers the menu column + right column inside the row */
+  align-items: stretch;
+  gap: 10px;
+  padding: 0 16px; /* breathing room on the left and right sides */
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%; /* forces row to stretch across the full available width of its parent container */
+}
+
+
+
+
+/* DINO IMAGE */
+.menu05-img {
+  width: 100% !important;
+  max-width: 320px !important;
+  height: auto !important;
+  max-height: 260px !important;
+  object-fit: contain !important;
+  align-self: flex-start;
+}
+
+
+
+/* EACH LEVEL ITEM */
+.menu05-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+    z-index: 2;
+  margin: 2px 0;
+}
+
+/* COIN SIZE (IMPORTANT FOR MOCKUP LOOK) */
+.menu05-coin {
+  width: 72px !important;
+  height: 72px !important;
+  display: block;
+  margin: 0 !important;
+}
+
+
+/* WRAPPER TO CONTROL NUMBER OVER COIN */
+.menu05-coin-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* NUMBER CENTERED ON TOP OF COIN */
+.menu05-level-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  font-weight: bold;
+  font-size: 2.4rem;       
+  color: #9FACDA;         
+  text-shadow: 0 2px 4px rgba(0,0,0,0.35);
+  pointer-events: none;
+}
+
+.menu05-menu {
+  position: relative;
+  isolation: isolate; /* IMPORTANT: forces clean layering */
+}
+
+/* KEEP VERTICAL BAR BEHIND EVERYTHING */
+.menu05-menu::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 18px;
+  top: 40px;
+  bottom: 40px;
+
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* FORCE COINS ABOVE BAR */
+.menu05-level {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* top left of every screen */
+
+.level-indicator {
+  position: absolute;
+  top: 10px;
+  left: 35px; /* matches h1 padding */
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: black;
+  background: rgba(350, 300, 218, 0.15);
+  border: 1px solid rgba(159, 172, 350, 0.8);
+  border-radius: 10px;
+  padding: 3px 10px;
+  z-index: 100;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+
+
+
+
+/* LINKS UTEIS BUTTON */
+.menu05-button {
+  background: #9FACDA;
+  color: white;
+  border: none;
+  border-radius: 22px;
+  padding: 10px 28px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  align-self: flex-end;
+  white-space: nowrap;
+
+grid-column: 2;
+grid-row: 2;
+
+justify-self: center;
+align-self: end;
+
+margin-bottom: 10px;
+
+}
+
+
+/* FORCE WRAPPER TO CONTROL LAYOUT */
+.menu05-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 35px 10px 10px;
+  justify-content: center; 
+  margin-top: 0;
+}
+
+
+.menu05-text {
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin: 35px 0 8px 0;
+  padding: 0 10px;
+}
+
+
+
+
+
+
+
+
+/* =========================
+   MENU05 / LINKS UTEIS FIX
+   ========================= */
+
+.menu05-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding-top: 30px;
+}
+
+/* subtitle */
+.menu05-subtext {
+  font-size: 1rem;
+  max-width: 320px;
+  opacity: 0.8;
+}
+
+/* main image */
+.menu05-main-img {
+  width: 300px !IMPORTANT;
+  height: auto;
+  margin: 10px 0;
+}
+
+/* links container */
+.links-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* links style */
+.links-box a {
+  background: #9FACDA; 
+  color: white;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+
+
+
+
+/* ====================== FORCE BIG IMAGES ====================== */
+
+.content img:not(.dino) {
+  display: block;dino
+  margin: 0 auto;
+  width: 55%;        /* default size for all images */
+  height: auto;
+}
+
+.content img.big-image {
+  width: 100% !important;
+  max-width: 290px !important;
+  max-height: 72vh !important;
+  height: auto !important;
+}
+
+.content img.extra-big-image {
+  width: 100% !important;
+  max-width: 370px !important;
+  max-height: 80vh !important;
+  height: auto !important;
+}
+
+.content img.small-image {
+  width: 100% !important;
+  max-width: 165px !important;
+  max-height: 65vh !important;
+  height: auto !important;
+}
+
+
+
+
+
+/* SHIFTS IMAGE VERTICALLY VIA JSON "class": "push-down" PROPERTY*/
+.content img.push-down-sm { margin-top: 50px; }
+.content img.push-down-md { margin-top: 100px; }
+.content img.push-down-lg { margin-top: 150px; }
+
+
+
+/* SHIFTS TEXT VERTICALLY VIA JSON "class": "push-down" PROPERTY*/
+.content p.push-down {
+  margin-top: 30px; /* adjust as needed */
+}
+
+
+.prob{
+color: red;
+}
+
+
+.solu{
+color: green;
+}
+
+/* This covers the size of MENU Coins (behind the number) for all Menu levels at once */
+
+.level img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+
+
+
+
+
+/* WIN SCREEN ANIMATION */
+@keyframes winEntrance {
+  0%   { transform: translateY(60px); opacity: 0; }
+  100% { transform: translateY(0px);  opacity: 1; }
+}
+
+@keyframes winGlow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6))
+                     drop-shadow(0 0 18px rgba(255, 215, 0, 0.3)); }
+  50%       { filter: drop-shadow(0 0 18px rgba(255, 215, 0, 1))
+                     drop-shadow(0 0 40px rgba(255, 180, 0, 0.7)); }
+}
+
+.win-screen img {
+  width: 100% !important;
+  max-width: 370px !important;
+  max-height: 90vh !important;
+  animation: 
+    winEntrance 1.1s ease-out forwards,
+    winGlow 2s ease-in-out 1.1s infinite;
+}
+
+
+
+.bottom-nav.has-hub .home-btn {
+  display: none;
+}
+
+
+/* all-levels button*/
+.bottom-nav.has-hub .hub-btn {
+  display: flex;
+  left: 50%;
+  top: 50%;   /* Tweak this percentage to move it up or down */
+  transform: translate(-50%, -50%);
+}
+
+
+
+/* Debug - add red stroke around imgs 
+.content img { 
+  outline: 4px solid red !important; 
+} 
+*/
+

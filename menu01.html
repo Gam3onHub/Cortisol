@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+<div class="app">
+
+  <main class="content">
+
+    <div class="menu">
+
+      <!-- LEVELS PATH -->
+      <div class="path"></div>
+
+        <!-- LEVELS (ALL LEVELS LIVE HERE) -->
+        <div class="levels">
+
+          <div class="level"><img src="lock.svg"></div>
+          <div class="level"><img src="lock.svg"></div>
+          <div class="level"><img src="lock.svg"></div>
+          <div class="level"><img src="lock.svg"></div>
+
+          <div class="level current" onclick="startLevel(0)">
+            <img src="coin.svg">
+            <span class="level-number">1</span>
+          </div>
+
+        </div>
+
+      <!-- DINO -->
+      <img class="dino" src="nofffa1.svg">
+
+      <!-- SPEECH -->
+<div class="speech" id="speech"></div>
+
+    </div>
+  </main>
+
+
+
+<div class="bottom-nav">
+
+  <button class="nav-btn home-btn" onclick="goHome()">
+    <img src="home.svg" alt="Home">
+  </button>
+
+</div>
+
+</div>
+
+
+
+<script>
+function getLang() {
+  const params = new URLSearchParams(window.location.search);
+  return (params.get("lang") || "pt").toLowerCase();
+}
+
+function startLevel(levelIndex) {
+  const lang = getLang();
+  document.body.classList.add("fade-out");
+  setTimeout(() => {
+    window.location.href = `app.html?level=${levelIndex}&screen=0&lang=${lang}`;
+  }, 300);
+}
+
+function goHome() {
+  window.location.href = "index.html";
+}
+
+function setProgress() {
+  const levels = document.querySelectorAll(".level");
+  levels.forEach(level => level.classList.remove("current"));
+  // Level 1 (last one) is current at the beginning
+  if (levels[levels.length - 1]) {
+    levels[levels.length - 1].classList.add("current");
+  }
+}
+
+function setSpeech() {
+  const lang = getLang();
+  const speech = document.getElementById("speech");
+  const text = {
+    pt: `Vem-findo! <br>Pronto para comefar?<br>Clica no nível 1!`,
+    en: `Welcome! <br>Ready to start?<br>Tap level 1!`
+  };
+  speech.innerHTML = text[lang] || text.pt;
+}
+
+// INIT
+setSpeech();
+setProgress();
+</script>
+
+
+
+
+
+</body>
+</html>

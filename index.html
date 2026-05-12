@@ -1,0 +1,63 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mind App</title>
+
+    <!-- LINK CSS FILE -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+  <!-- ===== HOME / SPLASH SCREEN ===== -->
+  <div class="home-screen active">
+
+    <!-- BACKGROUND LAYER -->
+    <div class="home-bg"></div>
+
+    <div class="home-content">
+      <h1 class="app-title">Ai-ai-ai Cerebrum!</h1>
+
+      <div class="language-buttons">
+  <button class="lang-btn" onclick="startApp('pt')">
+    <img src="portuguese.svg" alt="Português">
+  </button>
+
+  <button class="lang-btn" onclick="startApp('en')">
+    <img src="english.svg" alt="English">
+  </button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+<script>
+function startApp(lang) {
+  const cleanLang = (lang || "pt").trim().toLowerCase();
+  window.location.href = `menu01.html?level=0&lang=${cleanLang}`;
+}
+</script>
+
+
+
+  <script>
+  window.addEventListener("load", () => {
+    document.body.style.opacity = "0";
+    requestAnimationFrame(() => {
+      document.body.style.transition = "opacity 0.4s ease";
+      document.body.style.opacity = "1";
+    });
+  });
+  </script>
+
+
+
+
+  </body>
+  </html>

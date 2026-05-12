@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - Nível 1 Concluído</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+  <main class="content">
+    <div class="menu menu02">
+      <!-- LEVELS PATH -->
+      <div class="path"></div>
+      
+      <!-- LEVELS (ALL LEVELS LIVE HERE) - Correct order: Level 1 at bottom -->
+      <div class="levels">
+        <!-- Top levels (locked) -->
+        <div class="level"><img src="lock.svg"></div>
+        <div class="level"><img src="lock.svg"></div>
+        <div class="level"><img src="lock.svg"></div>
+        
+        <!-- Level 2 - Current (above Level 1) -->
+        <div class="level unlocked current" onclick="startLevel(1)">
+          <img src="coin.svg">
+          <span class="level-number">2</span>
+        </div>
+        
+<!-- Level 1 - Bottom, completed -->
+<div class="level completed" onclick="startLevel(0)">
+  <img src="levelcompleted.svg">
+</div>
+      </div>
+
+      <!-- DINO -->
+      <img class="dino" src="nofffa2.svg">
+
+      <!-- SPEECH BUBBLE -->
+    <div class="speech2" id="speech"></div>
+    </div>
+  </main>
+
+  <div class="bottom-nav">
+    <button class="nav-btn home-btn" onclick="goHome()">
+      <img src="home.svg" alt="Home">
+    </button>
+  </div>
+</div>
+
+<script>
+function getLang() {
+  const params = new URLSearchParams(window.location.search);
+  return (params.get("lang") || "pt").toLowerCase();
+}
+
+function startLevel(levelIndex) {
+  const lang = getLang();
+  window.location.href = `app.html?level=${levelIndex}&screen=0&lang=${lang}`;
+}
+
+function goHome() {
+  window.location.href = "index.html";
+}
+
+function setProgress() {
+  const levels = document.querySelectorAll(".level");
+  
+  levels.forEach(level => {
+    level.classList.remove("current", "unlocked", "completed");
+  });
+
+  // Level 1 (bottom one) - completed
+  if (levels[4]) levels[4].classList.add("completed");
+  
+  // Level 2 - current/unlocked
+  if (levels[3]) levels[3].classList.add("unlocked", "current");
+}
+
+function setSpeech() {
+  const lang = getLang();
+  const speech = document.getElementById("speech");
+  const text = {
+    pt: `Farabéns!<br>Nível 1 concluído!<br>Clica novamente <br> para rever ou fressiona aqui para inifiares o nível 2!`,
+    en: `Congrats! 🎉<br>Level 1 completed!<br>Tap again to review<br>or move on to level 2!`
+  };
+  speech.innerHTML = text[lang] || text.pt;
+}
+
+// INIT
+setSpeech();
+setProgress();
+</script>
+
+
+</body>
+</html>

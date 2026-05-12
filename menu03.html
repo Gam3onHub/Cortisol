@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - Nível 2 Concluído</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+  <main class="content">
+    <div class="menu menu03">   <!-- Changed class to menu03 -->
+      <!-- LEVELS PATH -->
+      <div class="path"></div>
+      
+      <!-- LEVELS -->
+      <div class="levels">
+        <!-- Top levels (locked) -->
+        <div class="level"><img src="lock.svg"></div>
+        
+        <!-- Level 3 - Current -->
+        <div class="level unlocked current" onclick="startLevel(2)">
+          <img src="coin.svg">
+          <span class="level-number">3</span>
+        </div>
+        
+        <!-- Level 2 - Completed -->
+        <div class="level completed" onclick="startLevel(1)">
+          <img src="levelcompleted.svg">
+        </div>
+        
+        <!-- Level 1 - Completed -->
+        <div class="level completed" onclick="startLevel(0)">
+          <img src="levelcompleted.svg">
+        </div>
+      </div>
+
+      <!-- DINO -->
+      <img class="dino" src="nofffa3.svg">   <!-- Change this image later -->
+
+      <!-- SPEECH BUBBLE -->
+      <div class="speech3" id="speech"></div>
+    </div>
+  </main>
+
+  <div class="bottom-nav">
+    <button class="nav-btn home-btn" onclick="goHome()">
+      <img src="home.svg" alt="Home">
+    </button>
+  </div>
+</div>
+
+<script>
+function getLang() {
+  const params = new URLSearchParams(window.location.search);
+  return (params.get("lang") || "pt").trim().toLowerCase();
+}
+
+function startLevel(levelIndex) {
+  const lang = getLang();
+
+window.location.href = `app.html?level=${levelIndex}&screen=0&lang=${lang}`;
+}
+
+function goHome() {
+  window.location.href = "index.html";
+}
+
+
+/* SPEECH */
+function setSpeech() {
+  const lang = getLang();
+  const speech = document.getElementById("speech");
+
+  const text = {
+    pt: `Farabéns! <br>Nível 2 concluído!<br>Clica novamente para rever ou avanfa <br> para o nível 3!`,
+    en: `Congrats! 🎉<br>Level 2 completed!<br>Tap again to review<br>or move on to level 3!`
+  };
+
+  speech.innerHTML = text[lang] || text.pt;
+}
+
+/* INIT */
+setSpeech();
+
+</script>
+
+
+</body>
+</html>

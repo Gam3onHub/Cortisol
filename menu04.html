@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - Nível 3 Concluído</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+  <main class="content">
+    <div class="menu menu04">   <!-- Changed to menu04 -->
+      <!-- LEVELS PATH -->
+      <div class="path"></div>
+      
+      <!-- LEVELS -->
+      <div class="levels">
+        <!-- Top level (locked) -->
+        <div class="level"><img src="lock.svg"></div>
+        
+        <!-- Level 4 - Current -->
+        <div class="level unlocked current" onclick="startLevel(3)">
+          <img src="coin.svg">
+          <span class="level-number">4</span>
+        </div>
+        
+        <!-- Level 3 - Completed -->
+        <div class="level completed" onclick="startLevel(2)">
+          <img src="levelcompleted.svg">
+        </div>
+        
+        <!-- Level 2 - Completed -->
+        <div class="level completed" onclick="startLevel(1)">
+          <img src="levelcompleted.svg">
+        </div>
+        
+        <!-- Level 1 - Completed -->
+        <div class="level completed" onclick="startLevel(0)">
+          <img src="levelcompleted.svg">
+        </div>
+      </div>
+
+      <!-- DINO -->
+      <img class="dino" src="nofffa2.svg">   <!-- Change this image to your dino for level 4 -->
+
+      <!-- SPEECH BUBBLE -->
+<div class="speech4" id="speech"></div>
+  </div>
+  </main>
+
+  <div class="bottom-nav">
+    <button class="nav-btn home-btn" onclick="goHome()">
+      <img src="home.svg" alt="Home">
+    </button>
+  </div>
+</div>
+
+<script>
+function startLevel(levelIndex) {
+  const params = new URLSearchParams(window.location.search);
+  const lang = (params.get("lang") || "pt").toLowerCase();
+
+  window.location.href =
+    `app.html?level=${levelIndex}&screen=0&lang=${lang}&t=${Date.now()}`;
+}
+
+function goHome() {
+  window.location.href = "index.html";
+}
+
+/* FIXED PROGRESS (NO INNERHTML REWRITES, NO INDEX BUGS) */
+function setProgress() {
+
+  const levels = document.querySelectorAll(".level");
+
+  levels.forEach(l => {
+    l.classList.remove("current", "unlocked", "completed");
+  });
+
+  /* ORDER IS: [lock, level4, level3, level2, level1] */
+
+  if (levels[4]) {
+    levels[4].classList.add("completed");
+  }
+
+  if (levels[3]) {
+    levels[3].classList.add("completed");
+  }
+
+  if (levels[2]) {
+    levels[2].classList.add("completed");
+  }
+
+  if (levels[1]) {
+    levels[1].classList.add("unlocked", "current");
+  }
+}
+
+/* SPEECH */
+function setSpeech() {
+
+  const params = new URLSearchParams(window.location.search);
+  const lang = (params.get("lang") || "pt").toLowerCase();
+
+  const speech = document.getElementById("speech");
+
+  const text = {
+    pt: `Farabéns! <br>Nível 3 concluído!<br>Clica num nível para rever ou avanfa <br> para o nível 4.`,
+    en: `Congrats! 🎉<br>Level 3 completed!<br>Tap a level to review or move on to level 4.`
+  };
+
+  speech.innerHTML = text[lang] || text.pt;
+}
+
+/* INIT */
+setSpeech();
+setProgress();
+</script>
+
+
+</body>
+</html>
