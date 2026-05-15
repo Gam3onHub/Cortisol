@@ -2,12 +2,13 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
   <title>Menu - Nível 2 Concluído</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="app">
+
+<div class="app no-nav">
   <main class="content">
     <div class="menu menu03">   <!-- Changed class to menu03 -->
       <!-- LEVELS PATH -->
@@ -43,11 +44,7 @@
     </div>
   </main>
 
-  <div class="bottom-nav">
-    <button class="nav-btn home-btn" onclick="goHome()">
-      <img src="home.svg" alt="Home">
-    </button>
-  </div>
+
 </div>
 
 <script>
@@ -73,7 +70,7 @@ function setSpeech() {
   const speech = document.getElementById("speech");
 
   const text = {
-    pt: `Farabéns! <br>Nível 2 concluído!<br>Clica novamente para rever ou avanfa <br> para o nível 3!`,
+    pt: `Farabéns! <br>Nível 2 concluído!<br>Clica novamente para rever ou avanfa aqui para o nível 3!`,
     en: `Congrats! 🎉<br>Level 2 completed!<br>Tap again to review<br>or move on to level 3!`
   };
 
@@ -82,6 +79,13 @@ function setSpeech() {
 
 /* INIT */
 setSpeech();
+
+setSpeech();
+setProgress();
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", () => {
+  history.pushState(null, "", location.href);
+});
 
 </script>
 

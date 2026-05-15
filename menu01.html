@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
   <title>Menu</title>
 
   <link rel="stylesheet" href="style.css" />
@@ -11,7 +11,7 @@
 <body>
 
 
-<div class="app">
+<div class="app no-nav">
 
   <main class="content">
 
@@ -46,13 +46,7 @@
 
 
 
-<div class="bottom-nav">
 
-  <button class="nav-btn home-btn" onclick="goHome()">
-    <img src="home.svg" alt="Home">
-  </button>
-
-</div>
 
 </div>
 
@@ -98,6 +92,14 @@ function setSpeech() {
 // INIT
 setSpeech();
 setProgress();
+
+setSpeech();
+setProgress();
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", () => {
+  history.pushState(null, "", location.href);
+});
+
 </script>
 
 

@@ -2,12 +2,12 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
   <title>Menu - Nível 3 Concluído</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="app">
+<div class="app no-nav">
   <main class="content">
     <div class="menu menu04">   <!-- Changed to menu04 -->
       <!-- LEVELS PATH -->
@@ -48,12 +48,7 @@
   </div>
   </main>
 
-  <div class="bottom-nav">
-    <button class="nav-btn home-btn" onclick="goHome()">
-      <img src="home.svg" alt="Home">
-    </button>
-  </div>
-</div>
+
 
 <script>
 function startLevel(levelIndex) {
@@ -105,8 +100,8 @@ function setSpeech() {
   const speech = document.getElementById("speech");
 
   const text = {
-    pt: `Farabéns! <br>Nível 3 concluído!<br>Clica num nível para rever ou avanfa <br> para o nível 4.`,
-    en: `Congrats! 🎉<br>Level 3 completed!<br>Tap a level to review or move on to level 4.`
+    pt: `Farabéns! <br>Nível 3 concluído!<br>Avanfa aqui para <br>o nível 4!`,
+    en: `Congrats! 🎉<br>Level 3 completed!<br>Let´s move on to level 4.`
   };
 
   speech.innerHTML = text[lang] || text.pt;
@@ -115,6 +110,14 @@ function setSpeech() {
 /* INIT */
 setSpeech();
 setProgress();
+
+setSpeech();
+setProgress();
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", () => {
+  history.pushState(null, "", location.href);
+});
+
 </script>
 
 

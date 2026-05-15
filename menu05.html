@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body style="opacity:0">
-<div class="app">
+
+<div class="app no-nav">
 
   <main class="content" id="content">
     <div class="menu05-layout">
@@ -16,9 +17,8 @@
 
         <div class="menu05-menu" id="levelMenu"></div>
 
-        <div style="display:flex; flex-direction:column; justify-content:space-between; align-items:flex-end; flex:1;">
+        <div class="menu05-dino-wrap">
           <img class="menu05-img" src="nofffa6.svg">
-          <button class="menu05-button" id="linksBtn"></button>
         </div>
 
       </div>
@@ -26,10 +26,16 @@
   </main>
 
 <nav class="bottom-nav" id="bottomNav">
-  <img class="nav-bg" id="nav-bg" src="close-bg.svg" alt="">
-  <button class="nav-btn home-btn" onclick="closeApp()">
-    <img src="close.svg" alt="Close">
-  </button>
+  <img class="nav-bg" id="nav-bg" src="two-button-locked-forward.svg" alt="">
+    <button class="menu05-button" id="linksBtn"></button>
+
+    <button class="nav-btn home-btn" onclick="goHome()">
+      <img src="home.svg" alt="Home">
+    </button>
+
+    <button class="nav-btn next-btn" onclick="closeApp()">
+      <img src="close.svg" alt="Close">
+    </button>
 </nav>
 
 </div>
@@ -84,6 +90,12 @@ const menu = document.getElementById("levelMenu");
   menu.appendChild(item);
 });
 
+// TRAP BROWSER BACK/FORWARD — APP NAVIGATION HAS PRIORITY
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", () => {
+  history.pushState(null, "", location.href);
+});
+
 window.goHome = () => { window.location.href = "index.html"; };
 
 
@@ -97,6 +109,13 @@ window.closeApp = () => {
   window.close();
 };
 
+
+setSpeech();
+setProgress();
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", () => {
+  history.pushState(null, "", location.href);
+});
 
 </script>
 </body>

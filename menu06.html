@@ -10,7 +10,7 @@
 
 <body>
 
-<div class="app">
+<div class="app no-nav">
 
   <main class="content menu05-screen">
 
@@ -67,6 +67,13 @@ function goBack() {
 function goHome() {
   window.location.href = "index.html";
 }
+setSpeech();
+setProgress();
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", () => {
+  history.pushState(null, "", location.href);
+});
+
 </script>
 
 </body>
