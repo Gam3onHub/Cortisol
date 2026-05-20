@@ -9,16 +9,16 @@
         "pt": {
           "content": [
             { "type": "title", "value": "O que acontece no cérebro quando nos queixamos diariamente?" },
-            { "type": "text", "value": "Não é só mau humor. É biologia.", "class": "push-down-sm" },
-            { "type": "image", "value": "brain.svg", "class": "push-down-lg"},
+            { "type": "text", "value": "Não é só mau humor. <br> É biologia em funcionamento!", "class": "push-down-sm" },
+            { "type": "image", "value": "brain.svg", "class": "push-down-sm"},
             { "type": "text", "value": "" }
           ]
         },
         "en": {
           "content": [
-            { "type": "title", "value": "What happens in the brain when <br> we complain daily?" },
-            { "type": "text", "value": "It's not just bad mood. It's biology.", "class": "push-down-sm" },
-            { "type": "image", "value": "brain.svg" , "class": "push-down-lg"},
+            { "type": "title", "value": "What happens <br> in the brain when <br> we complain daily?" },
+            { "type": "text", "value": "It's not just bad mood. <br> It's biology at work!", "class": "push-down-sm" },
+            { "type": "image", "value": "brain.svg" , "class": "push-down-sm"},
             { "type": "text", "value": "" }
 
             ]
@@ -30,7 +30,7 @@
           "content": [
             { "type": "title", "value": "Queixume constante altera as sinapses <br> no cérebro." },
             { "type": "text", "value": "Sinapses são como ligações <br>ou ramificações entre ideias <br> no cérebro.", "class": "push-down-sm" },
-            { "type": "image", "value": "brainbranch.svg", "class": "push-down-md" }
+            { "type": "image", "value": "brainbranch.svg", "class": "push-down-sm" }
           ]
         },
         "en": {
@@ -62,15 +62,15 @@
         "SCREEN_ID": "L1_S4",
         "pt": {
           "content": [
-            { "type": "title", "value": "Comunicação interna  negativa e constante, traz consequencias  negativas para  a  saúde." },
-            { "type": "text", "value": "" },
+            { "type": "title", "value": "Comunicação interna negativa e constante, traz consequencias  negativas para <br> a  saúde." },
+            { "type": "text", "value": "Nos proximos capítulos <br> vamos perceber mais <br> acerca deste facto!" },
             { "type": "image", "value": "headache.svg", "class": "push-down-sm"}
           ]
         },
         "en": {
           "content": [
-            { "type": "title", "value": "Constant negative internal communication has negative <br> consequences for health." },
-            { "type": "text", "value": "" },
+            { "type": "title", "value": "Constant negative internal communication has negative consequences <br> for health." },
+            { "type": "text", "value": "We will understand more <br> about this fact in the <br> following chapters!" },
             { "type": "image", "value": "headache.svg", "class": "push-down-sm"}
           ]
         }
@@ -83,15 +83,15 @@
         "pt": {
           "content": [
             { "type": "title", "value": "<b>Stress produz cortisol.</b>" },
-            { "type": "text", "value": "Cortisol é a hormona do stress.  Cortisol elevado =  aumento de  sensações desconfortáveis,   tais como, ansiedade, baixa-tolerância, irritabilidade  e medo injustificado.", "class": "push-down" },
-            { "type": "image", "value": "headache1.svg", "class": "push-down-sm" }
+            { "type": "text", "value": "Cortisol é a hormona <br> do stress. <br> Cortisol elevado =  aumento <br> de  sensações desconfortáveis, tais como, ansiedade, baixa-tolerância, irritabilidade <br> e medo injustificado.", "class": "push-down-sm" },
+            { "type": "" }
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "Stress produces cortisol." },
             { "type": "text", "value": "Cortisol is the stress hormone. Elevated cortisol = increased uncomfortable sensations, such as anxiety, low tolerance, irritability, and fear." },
-            { "type": "image", "value": "headache1.svg", "class": "push-down-sm"  }
+            { "type": "" }
 
             ]
         }
@@ -101,15 +101,15 @@
         "SCREEN_ID": "L2_S2",
         "pt": {
           "content": [
-            { "type": "title", "value": "O cortisol é responsável por sensações de ansiedade, baixa-tolerância, negatividade  e queixume crónico." },
-            { "type": "text", "value": "Quando o cortisol está elevado,   o corpo vive em constante   modo de alerta!", "class": "push-down"  },
+            { "type": "title", "value": "O cortisol é responsável por sensações de ansiedade, baixa-tolerância, negatividade  <br> e queixume crónico." },
+            { "type": "text", "value": "Quando o cortisol está elevado, o corpo vive em constante modo de alerta!", "class": "push-down-sm"  },
             { "type": "image", "value": "headache2.svg" }
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "Cortisol is responsible for feelings of anxiety, low tolerance, negativity, and chronic complaining." },
-            { "type": "text", "value": "When cortisol is high, the body lives in a constant state of alert!", "class": "push-down"},
+            { "type": "text", "value": "When cortisol is high, the body lives in a constant state <br>of alert!", "class": "push-down-sm"},
             { "type": "image", "value": "headache2.svg"}
 
             ]
@@ -120,16 +120,16 @@
         "SCREEN_ID": "L2_S3",
         "pt": {
           "content": [
-            { "type": "title", "value": "Cortisol em excesso (stress crónico)  reduz o tamanho do hipocampo e afecta  a memória." },
-            { "type": "text", "value": "O hipocampo é uma área do cerebro importante para memória e aprendizagem.", "class": "push-down"},
-            { "type": "image", "value": "hipocamp.svg","class": "push-down-sm"}
+            { "type": "title", "value": "Cortisol em excesso (stress crónico) reduz o tamanho do hipocampo e afecta  a memória." },
+            { "type": "text", "value": "O hipocampo é uma área <br> do cerebro importante para memória e aprendizagem.", "class": "push-down-sm"},
+            { "type": "image", "value": "hipocamp.svg","class": "push-down-md"}
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "Excess cortisol (chronic stress) reduces the size of the hippocampus and affects memory." },
-            { "type": "text", "value": "The hippocampus is an area of the brain important for memory and learning.", "class": "push-down" },
-            { "type": "image", "value": "hipocamp.svg"}
+            { "type": "text", "value": "The hippocampus is an area <br> of the brain important <br> for memory and learning.", "class": "push-down-sm" },
+            { "type": "image", "value": "hipocamp.svg","class": "push-down-md"}
           ]
         }
       },
@@ -138,7 +138,7 @@
         "SCREEN_ID": "L2_S4",
         "pt": {
           "content": [
-            { "type": "title", "value": "Com o tempo, Cortisol em excesso aumenta  o risco de:" },
+            { "type": "title", "value": "Com o tempo, Cortisol em excesso aumenta o risco de:" },
             { "type": "text", "value": " <ul><li>Problemas cardíacos</li> <li> Tensão alta</li> <li> Diabetes</li> <li> AVC</li></ul>", "class": "push-down" },
             { "type": "image", "value": "alert.svg"}
           ]
@@ -146,7 +146,7 @@
         "en": {
           "content": [
             { "type": "title", "value": "Over time, too much cortisol increases the risk of:" },
-            { "type": "text", "value": " <ul><li>Heart problems</li> <li>High blood pressure</li> <li>Diabetes</li> <li>Stroke</li></ul>", "class": "push-down" },
+            { "type": "text", "value": " <ul><li>Heart problems</li> <li>High blood pressure</li> <li>Diabetes</li> <li>Stroke</li></ul>", "class": "push-down-sm" },
             { "type": "image", "value": "alert.svg"}
           ]
         }
@@ -157,14 +157,14 @@
         "pt": {
           "content": [
             { "type": "title", "value": "O que mantém o  cortisol alto?" },
-            { "type": "text", "value": " <ol><li>Constante queixume (mantém o corpo “em alerta”)</li><li>Ignorar a necessidade de ajustar certos comportamentos no dia a dia, tais como:</li><ul><li>melhorar a qualidade do sono</li><li>reduzir o consumo excessivo de cafeína e álcool, >>...</li></ol></ul>", "class": "push-down" },
+            { "type": "text", "value": " <ol><li>Constante queixume (mantém o corpo “em alerta”)</li><li>Ignorar a necessidade <br> de ajustar certos comportamentos no <br> dia-a-dia, tais como:</li>", "class": "push-down" },
             { "type": "image", "value": "" }
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "What keeps  cortisol high?" },
-            { "type": "text", "value": "<ol><li>Constant complaining (keeps the body “on alert”)</li><li>Ignoring the need to adjust certain daily habits, such as:</li><ul><li>improving sleep quality</li><li>reducing excessive caffeine and alcohol consumption, >>...</li></ol></ul>", "class": "push-down"  },
+            { "type": "text", "value": "<ol><li>Constant complaining (keeps the body “on alert”)</li><li>Ignoring the need to adjust certain daily habits, <br> such as:", "class": "push-down"  },
             { "type": "image", "value": "" }
           ]
         }
@@ -174,15 +174,15 @@
         "SCREEN_ID": "L2_S6",
         "pt": {
           "content": [
-            { "type": "title", "value": "O que mantém o  cortisol alto?" },
-            { "type": "text", "value": "...>> praticar atividade física regularmente, fazer pausas para relaxamento ou respiração consciente, estabelecer limites no trabalho e desen-volver estratégias pessoais e internas mais saudáveis para lidar com o stress no dia a dia.", "class": "push-down" },
+            { "type": "title", "value": "Ajustar comportamentos:" },
+            { "type": "text", "value": "<ul><li>melhorar a qualidade do sono</li> <li>evitar consumo excessivo de cafeína e álcool,</li> <li>praticar atividade física regularmente,</li> <li>fazer pausas para respiração consciente,</li> <li>desenvolver estratégias pessoais internas para lidar com possivel stress no dia-a-dia.</li></ol>", "class": "push-down-sm" },
             { "type": "image", "value": "" }
           ]
         },
         "en": {
           "content": [
-            { "type": "title", "value": "What keeps  cortisol high?" },
-            { "type": "text", "value": "...>> exercising regularly, taking breaks for relaxation or mindful breathing, setting boundaries at work, and developing healthier personal and internal strategies to deal with stress in daily life.", "class": "push-down" },
+            { "type": "title", "value": "Behavioural adjustment" },
+            { "type": "text", "value": "<ul><li>Improve sleep quality</li> <li>Avoid excessive caffeine and alcohol consumption</li> <li>Practice regular physical activity</li> <li>Take breaks for conscious breathing</li> <li>Develop internal personal strategies to cope with possible daily stress.</li></ol>", "class": "push-down-sm" },
             { "type": "image", "value": "" }
           ]
         }
@@ -192,15 +192,15 @@
         "SCREEN_ID": "L2_S7",
         "pt": {
           "content": [
-            { "type": "title", "value": "Sem interrupção,  o ciclo repete-se.","style":"highlight" },
-            { "type": "image", "value": "cycle1.svg","class":"big-image" },
+            { "type": "title", "value": "Sem interrupção, o ciclo repete-se.","style":"highlight" },
+            { "type": "image", "value": "cycle.svg","class":"big-image" },
             { "type": "image", "value": "cycle3.svg", "class":"small-image"}
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "Without interruption,  the cycle repeats itself.","style":"highlight" },
-            { "type": "image", "value": "cycleeng .svg","class":"big-image" },
+            { "type": "image", "value": "cycleeng.svg","class":"big-image" },
             { "type": "image", "value": "cycle3.svg", "class":"small-image"}
           ]
         }
@@ -211,14 +211,14 @@
         "pt": {
           "content": [
             { "type": "title", "value": "A boa notícia:  o cérebro é flexivel!" },
-            { "type": "text", "value": "Independentemente da idade, é possível mudar o ciclo negativo!", "class": "push-down" },
+            { "type": "text", "value": "Independentemente da idade, é possível mudar o <br> ciclo negativo!", "class": "push-down" },
             { "type": "image", "value": "brainpower.svg", "class": "push-down-md" }
           ]
         },
         "en": {
           "content": [
-      { "type": "title", "value": "The good news:  the brain is flexible!" },
-      { "type": "text", "value": "Regardless of age, it is possible to change the negative cycle!", "class": "push-down" },
+      { "type": "title", "value": "The good news:  the brain  <br> is flexible!" },
+      { "type": "text", "value": "Regardless of age, it is possible to change the <br> negative cycle!", "class": "push-down" },
       { "type": "image", "value": "brainpower.svg", "class": "push-down-md" }
           ]
         }
@@ -230,14 +230,14 @@
           "content": [
             { "type": "title", "value": "O que posso fazer  no dia-a-dia?","style":"highlight"},
             { "type": "image", "value": "shrek1.svg" },
-            { "type": "text", "value": "Primeiro: notar...<b>“Estou a queixar-me…  outra vez?”</b>  Tudo começa com,  auto-observação.", "class": "push-down"}
+            { "type": "text", "value": "Auto-reflexão:<br> <b>“Estou a queixar-me… <br> outra vez?”</b> <br> Tudo começa com, <br> auto-observação.", "class": "push-down"}
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "What can I do  in daily life?","style":"highlight"},
             { "type": "image", "value": "shrek1.svg" },
-            { "type": "text", "value": "First: notice it...<b>“Am I complaining...  again?”</b>  Everything starts with  self-observation.", "class": "push-down"}
+            { "type": "text", "value": "Self-reflection:<br> <b>“Am I complaining... <br> again?”</b> <br> Everything starts with self-observation.", "class": "push-down"}
           ]
         }
       },
@@ -248,14 +248,14 @@
           "content": [
             { "type": "title", "value": "O que posso fazer  no dia-a-dia?","style":"highlight"},
             { "type": "image", "value": "shrek1.svg"},
-            { "type": "text", "value": "<b>A Vida oferece desafios  a toda a gente.</b>   Quando acontece conosco,  a pergunta chave deve ser:" }
+            { "type": "text", "value": "<b>A Vida oferece desafios a toda a gente.</b> <br> Quando acontece conosco, <br> a pergunta chave deve ser:" }
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "What can I do  in daily life?","style":"highlight"},
             { "type": "image", "value": "shrek1.svg"},
-            { "type": "text", "value": "<b>Life brings challenges  to everyone.</b>   When it happens to us,  the key question should be:" }
+            { "type": "text", "value": "<b>Life brings challenges <br> to everyone.</b> <br>  When it happens to us, <br> the key question should be:" }
           ]
         }
       },
@@ -267,14 +267,14 @@
           "content": [
             { "type": "title", "value": "O que posso fazer  no dia-a-dia?","style":"highlight"},
             { "type": "image", "value": ""},
-            { "type": "text", "value": "<b>Esta situação depende apenas de mim? ✅ Se SIM:</b> Faça algo de construtivo agora/ hoje, se possivel, por pouco  que seja. Um passo pequeno hoje, outro amanhã.  Calma.  “Grão-a-grão enche a galinha  o papo.” "  }
+            { "type": "text", "value": "<b>Esta situação depende apenas de mim? <br> ✅ Se SIM:</b><br> Faça algo de construtivo agora/ hoje, se possivel, <br> por pouco que seja. <br> Um passo pequeno hoje, <br> outro amanhã. <br> Calma. <br> ”Grão-a-grão enche a galinha <br> o papo.” "  }
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "What can I do  in daily life?","style":"highlight"},
             { "type": "image", "value": ""},
-            { "type": "text", "value": "<b>Does this situation depend only on me? ✅ If YES:</b> Do something constructive now/today, if possible, no matter how small it may be. One small step today,  another tomorrow.  Calmly.  “Grain by grain, the hen fills  its belly.” "  }
+            { "type": "text", "value": "<b>Does this situation depend only on me? <br> ✅ If YES:</b><br> Do something constructive now/today, if possible, <br> no matter how small it may be. One small step today, <br> another tomorrow. <br> Chill. <br> “Rome wasn't built in a day.” "  }
           ]
         }
       },
@@ -283,16 +283,16 @@
         "SCREEN_ID": "L2_S12",
         "pt": {
           "content": [
-            { "type": "title", "value": "O que posso fazer  no dia-a-dia?","style":"highlight" },
+            { "type": "title", "value": "O que posso fazer no dia-a-dia?","style":"highlight" },
             { "type": "image", "value": ""},
-            { "type": "text", "value": "<b>Esta situação depende apenas de mim? ❌Se NÃO:</b> <u><b>Só por hoje,</b></u> largue mão!  Tudo a seu tempo.  “Roma e pavia, não se construiram num dia!“ "  }
+            { "type": "text", "value": "<b>Esta situação depende apenas de mim? <br> ❌Se NÃO:</b><br> <u><b>Só por hoje,</b></u> largue mão! <br> Tudo a seu tempo. <br> “Roma e pavia, não se construiram num dia!“ "  }
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "What can I do  in daily life?","style":"highlight" },
             { "type": "image", "value": ""},
-            { "type": "text", "value": "<b>Does this situation depend only on me? ❌ If NO:</b> <u><b>Just for today,</b></u> let it go!  Everything in its own time.  “Rome wasn’t built in a day!” "  }
+            { "type": "text", "value": "<b>Does this situation depend only on me? <br>❌ If NO:</b><u><br><b>Just for today,</b></u> let it go!  Everything in its own time.” "  }
           ]
         }
       },
@@ -302,16 +302,16 @@
         "SCREEN_ID": "L2_S13",
         "pt": {
           "content": [
-            { "type": "title", "value": "O que posso fazer  no dia-a-dia?","style":"highlight" },
-            { "type": "text", "value": "Sugestões diárias simples e eficazes: <ul><li>Faça 3 respirações profundas e lentas, várias vezes durante o dia,</li> <li>Resolver o que depende de si e deixar o resto seguir o seu curso,</li> <li>Aceitar que o imprevisível também faz parte da vida.</li> "  },
-            { "type": "image", "value": "cat2.svg", "class": "push-down-md" }
+            { "type": "title", "value": "O que posso fazer no dia-a-dia?","style":"highlight" },
+            { "type": "text", "value": "Sugestões diárias simples <br> e eficazes: <ul><li>Faça 3 respirações profundas e lentas, várias vezes durante o dia,</li> <li>Resolver o que depende de si e deixar o resto seguir o seu curso,</li> <li>Aceitar que o imprevisível também faz parte da vida.</li> "  },
+            { "type": "image", "value": "cat2.svg", "class":"small-image"}
           ]
         },
         "en": {
           "content": [
-            { "type": "title", "value": "What can I do  in daily life?","style":"highlight" },
-            { "type": "text", "value": "Simple and effective daily suggestions: <ul><li>Take 3 deep and slow breaths several times throughout the day,</li> <li>Resolve what depends on you and let the rest follow its course,</li> <li>Accept that unpredictability is also part of life.</li> "  },
-            { "type": "image", "value":"cat2.svg", "class": "push-down-md"}
+            { "type": "title", "value": "What can I do in daily life?","style":"highlight" },
+            { "type": "text", "value": "Simple and effective <br> daily suggestions: <ul><li>Take 3 deep and slow breaths several times throughout the day,</li> <li>Resolve what depends on you and let the rest follow its course,</li> <li>Accept that unpredictability is also part of life.</li> "  },
+            { "type": "image", "value":"cat2.svg", "class": "small-image"}
           ]
         }
       }
@@ -325,17 +325,17 @@
         "SCREEN_ID": "L3_S1",
         "pt": {
           "content": [
-            { "type": "title", "value": "Exemplos do dia-a-dia " },
+            { "type": "title", "value": "Montanha-Russa de Cortisol:  <br> Exemplos do dia-a-dia " },
             { "type": "text", "value": "<b>Problema 1:</b>", "class": "prob"},
-            { "type": "text", "value": "Fila no supermercado  ou trânsito lento!"  },
+            { "type": "text", "value": "Fila no supermercado <br> ou trânsito lento!"  },
             { "type": "image", "value": "prob1.svg", "class":"image" }
           ]
         },
         "en": {
           "content": [
-        { "type": "title", "value": "Everyday examples " },
+        { "type": "title", "value": "Cortisol Rollercoaster: <br>  Everyday Examples" },
         { "type": "text", "value": "<b>Problem 1:</b>", "class": "prob"},
-        { "type": "text", "value": "Supermarket queue  or slow traffic!"  },
+        { "type": "text", "value": "Supermarket queue <br> or slow traffic!"  },
         { "type": "image", "value": "prob1.svg", "class":"image" }
           ]
         }
@@ -348,18 +348,18 @@
         "SCREEN_ID": "L3_S2",
         "pt": {
           "content": [
-            { "type": "title", "value": "Exemplos do dia-a-dia " },
+            { "type": "title", "value": "Montanha-Russa de Cortisol:  <br> Exemplos do dia-a-dia " },
             { "type": "text", "value": "<b>Solução 1:</b></b>", "class": "solu"},
-            { "type": "text", "value": "<b>Queixa:</b> “Isto nunca mais anda!!” <b>Pergunta:</b>Depende de mim?  →Não. </b><b>Acção:</b>Ouvir música / respirar fundo 3x. <b>Ocorre redução de stress!</b>"  },
-            { "type": "image", "value": "chill1.svg", "class":"big-image"  }
+            { "type": "text", "value": "<b>Queixa:</b> <br>“Isto nunca mais anda!!” <br><b>Pergunta:</b><br>Depende de mim?  <br>→Não. <br></b><b>Acção:</b><br>Ouvir música / respirar fundo. <br><b>Ocorre redução de stress!</b>"  },
+            { "type": "image", "value": "chill1.svg", "class":"small-image"  }
           ]
         },
         "en": {
           "content": [
-        { "type": "title", "value": "Everyday examples " },
+        { "type": "title", "value": "Cortisol Rollercoaster:  <br> Everyday Examples" },
         { "type": "text", "value": "<b>Solution 1:</b></b>", "class": "solu"},
-        { "type": "text", "value": "<b>Complaint:</b> “This line never moves!!” <b>Question:</b>Does it depend on me? → No. <b>Action:</b>Listen to music / take 3 deep breaths. <b>Stress is reduced!</b>"  },
-        { "type": "image", "value": "chill1.svg", "class":"big-image"  }
+        { "type": "text", "value": "<b>Complaint:</b><br> “This line never moves!!”<br> <b>Question:</b><br> Does it depend on me? <br>→ No.<br> <b>Action:</b><br> Listen to music / take deep breaths. <br><b>Stress reduction occurs!</b>"  },
+        { "type": "image", "value": "chill1.svg", "class":"small-image"  }
           ]
         }
       },
@@ -370,7 +370,7 @@
         "SCREEN_ID": "L3_S3",
         "pt": {
           "content": [
-            { "type": "title", "value": "Exemplos do dia-a-dia" },
+            { "type": "title", "value": "Montanha-Russa de Cortisol:  <br> Exemplos do dia-a-dia " },
             { "type": "image", "value": "news.svg" },
             { "type": "text", "value": "Problema 2:", "class": "push-down", "class": "prob"},
             { "type": "text", "value": "Notícias dramáticas..."  }
@@ -378,7 +378,7 @@
         },
         "en": {
           "content": [
-        { "type": "title", "value": "Everyday examples" },
+        { "type": "title", "value": "Cortisol Rollercoaster: <br>  Everyday Examples" },
         { "type": "image", "value": "news.svg" },
         { "type": "text", "value": "Problem 2:", "class": "push-down", "class": "prob"},
         { "type": "text", "value": "Dramatic news..."  }
@@ -391,18 +391,18 @@
         "SCREEN_ID": "L3_S4",
         "pt": {
           "content": [
-            { "type": "title", "value": "Exemplos do dia-a-dia"},
+            { "type": "title", "value": "Montanha-Russa de Cortisol:  <br> Exemplos do dia-a-dia "},
             { "type": "image", "value": ""},
             { "type": "text", "value": "Solução 2:", "class": "solu"},
-            { "type": "text", "value": "<b>Queixa:</b> “As notícias da TV são demasiado dramáticas  e só mostram a pior perspectiva da vida.” <b>Pergunta:</b> Este é o unico meio disponivel onde posso informar-me?  Estou realmente a informar-me… ou apenas a alimentar stress?"  }
+            { "type": "text", "value": "<b>Queixa:</b><br> “As notícias da TV são demasiado dramáticas e só mostram a pior perspectiva <br>da vida.” <br><b>Pergunta:</b><br> Este é o unico meio disponivel onde posso informar-me? <br> Estou realmente a informar-me… ou apenas a alimentar stress?"  }
           ]
         },
         "en": {
           "content": [
-        { "type": "title", "value": "Everyday examples"},
+        { "type": "title", "value": "Cortisol Rollercoaster: <br>  Everyday Examples"},
         { "type": "image", "value": ""},
         { "type": "text", "value": "Solution 2:", "class": "solu"},
-        { "type": "text", "value": "<b>Complaint:</b> “TV news is too dramatic  and only shows the worst side of life.” <b>Question:</b> Is this the only available way for me to stay informed?  Am I really informing myself… or just feeding stress?"  }
+        { "type": "text", "value": "<b>Complaint:</b><br> “TV news is too dramatic and only shows the worst side of life.” <br><b>Question:</b> <br>Is this the only available way for me to stay informed? <br> Am I really informing myself… or just feeding stress?"  }
       ]
         }
       },
@@ -413,18 +413,18 @@
         "SCREEN_ID": "L3_S5",
         "pt": {
           "content": [
-            { "type": "title", "value": "Exemplos do dia-a-dia" },
+            { "type": "title", "value": "Montanha-Russa de Cortisol:  <br> Exemplos do dia-a-dia " },
             { "type": "image", "value": "" },
             { "type": "text", "value": "Solução 2:", "class": "solu" },
-            { "type": "text", "value": "<b>“Acção:</b>   Eu controlo quando ver,  o que ver e onde ver (internet, jornais).     Ocorre redução de stress porque ver e escutar algo da TV, ou ler algo, é uma experiencia diferente a nível cognitivo (processo mental de aquisição de conhecimento, incluindo atenção, memória, linguagem, raciocínio   e tomada de decisão). "  }
+            { "type": "text", "value": "<b>“Acção:</b> <br>Eu controlo quando ver,  o que ver e onde ver (internet, jornais). <br>Ver, escutar algo da TV, ou lêr algo, são experiências diferentes a nível cognitivo (processo mental de aquisição de conhecimento, incluindo atenção, memória, linguagem, raciocínio e tomada de decisão). "  }
           ]
         },
         "en": {
           "content": [
-        { "type": "title", "value": "Everyday examples" },
+        { "type": "title", "value": "Cortisol Rollercoaster: <br> Everyday Examples" },
         { "type": "image", "value": "" },
         { "type": "text", "value": "Solution 2:", "class": "solu" },
-        { "type": "text", "value": "<b>Action:</b>   I control when to watch,  what to watch and where to watch it (internet, newspapers).     Stress is reduced because watching and hearing something on TV, or reading something, are different cognitive experiences (mental processes involving attention, memory, language, reasoning  and decision-making)."  }
+        { "type": "text", "value": "<b>Action:</b><br> I control when I watch, what I watch, and where I watch it (internet, newspapers). <br>Watching, listening to something on TV, or reading something are different experiences at a cognitive level (mental process of acquiring knowledge, including attention, memory, language, reasoning, and decision-making)."  }
       ]
         }
       },
@@ -435,15 +435,16 @@
         "SCREEN_ID": "L3_S6",
         "pt": {
           "content": [
-        { "type": "title", "value": "It’s not about stopping  complaining" },
+        { "type": "title", "value": "Não se trata de parar de reclamar." },
         { "type": "image", "value": "cat1.svg" },
-        { "type": "text", "value": "The goal is not to eliminate stress forever, but rather to avoid feeding it every day.   Complaining is automatic,   but choosing where to place our mental energy   is a conscious act!", "class": "push-down"}
+        { "type": "text", "value": "O objetivo não é eliminar o stress para sempre, mas sim evitar alimentá-lo diariamente.<br><br> Reclamar é automático, <br>mas escolher para onde direcionar nossa energia mental é um ato consciente!", "class": "push-down"}
       ]
         },
         "en": {
           "content": [
-            { "type": "title", "value": "LEVEL 3 - Screen 6" },
-            { "type": "text", "value": "Example of level 3." }
+        { "type": "title", "value": "It’s not about stopping complaining" },
+        { "type": "image", "value": "cat1.svg" },
+        { "type": "text", "value": "The goal is not to eliminate stress forever, but rather to avoid feeding it every day. <br><br>  Complaining is automatic, <br> but choosing where to place our mental energy   is a conscious act!", "class": "push-down"}
           ]
         }
       },
@@ -456,14 +457,15 @@
           "content": [
         { "type": "title", "value": "" },
         { "type": "image", "value": "img25.svg"},
-        { "type": "text", "value": "Optimism is not just  a personality trait;   it is a conscious daily practice. It develops through learning, reflection,   reading, and the daily conscious decision to adjust the way we think and react   to situations.", "class": "push-down"}
+        { "type": "text", "value": "O otimismo não é apenas um traço de personalidade;  <br> é uma prática diária e consciente que se desenvolve através de aprendizagem, da reflexão, da leitura e da decisão consciente diária de ajustar a maneira como pensamos e reagimos às situações inesperadas.", "class": "push-down"}
       ]
         },
         "en": {
           "content": [
-            { "type": "title", "value": "LEVEL 3 - Screen 7" },
-            { "type": "text", "value": "Example of level 3." }
-          ]
+        { "type": "title", "value": "" },
+        { "type": "image", "value": "img25.svg"},
+        { "type": "text", "value": "Optimism is not just a personality trait; it is a daily and conscious practice that develops through learning, reflection, reading, and the conscious daily decision <br>  to adjust how we think and react to unexpected situations.", "class": "push-down"}
+      ]
         }
       },
 
@@ -473,15 +475,15 @@
         "pt": {
           "content": [
             { "type": "title", "value": "" },
-            { "type": "text", "value": "Com pequenos passos consistentes, criam-se novos padrões mentais que permitem lidar melhor com a realidade diária e viver com maior qualidade de vida. "},
-            { "type": "image", "value": "img26.svg", "class": "push-down-sm"}
+            { "type": "text", "value": "Através de pequenos passos consistentes, praticados diariamente, é possível criar novos padrões mentais que ajudam a lidar melhor com a realidade do dia a dia e a viver com maior qualidade de vida. Como diz o velho ditado: <br> ‘A vida não está tanto na chegada, mas sim <br> no caminho percorrido.‘!"},
+            { "type": "image", "value": "img26.svg", "class": "push-down-sm", "class":"small-image"}
           ]
         },
         "en": {
           "content": [
         { "type": "title", "value": "" },
-        { "type": "text", "value": "With small consistent steps, new mental patterns are created that allow us to deal better with daily reality and live with a higher quality of life."},
-        { "type": "image", "value": "img26.svg", "class": "push-down-sm"}
+        { "type": "text", "value": "Through small, consistent steps practised daily, it is possible to develop new mental patterns that help us deal better with everyday life and improve our overall quality of life. As the old saying goes: ‘Life is not so much about the destination, it´s more about <br> the journey.‘"},
+        { "type": "image", "value": "img26.svg", "class": "push-down-sm", "class":"small-image"}
       ]
         }
       },
@@ -494,14 +496,14 @@
           "content": [
             { "type": "title", "value": "" },
             { "type": "image", "value": "img27.svg"},
-            { "type": "text", "value": "Quando esse trabalho interior é ignorado e nos limitamos a uma atitude constante de queixa, as consequências não recaem apenas sobre nós mesmos, mas também sobre quem nos rodeia, tornando a convivência mais difícil para todos."}
+            { "type": "text", "value": "Quando esse trabalho interior é ignorado e nos limitamos a uma atitude constante de queixa, as consequências <br> não recaem apenas sobre nós mesmos, mas também sobre quem nos rodeia, tornando a convivência mais difícil <br> para todos."}
                       ]
         },
         "en": {
           "content": [
         { "type": "title", "value": "" },
         { "type": "image", "value": "img27.svg"},
-        { "type": "text", "value": "When this inner work is ignored and we limit ourselves to a constant attitude of complaining, the consequences do not fall only on ourselves, but also on those around us, making coexistence more difficult for everyone."}
+        { "type": "text", "value": "When this inner work is ignored and we limit ourselves to a constant attitude of complaining, the con-<br>sequences do not fall only on ourselves, but also on those around us, making coexistence more difficult for everyone."}
       ]
         }
       }
@@ -515,14 +517,14 @@
         "pt": {
           "content": [
             { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" },
-            { "type": "text", "value": "Em vez de agir explosivamente ás circunstancias do dia-a-dia, experimente adoptar hábitos diários que treinam o cérebro para o positivo.  Tais como:" },
+            { "type": "text", "value": "Em vez de agir explosiva-<br>mente ás circunstancias do dia-a-dia, experimente adoptar hábitos diários que treinam o cérebro para o positivo. <br> Tais como:" },
             { "type": "image", "value": "img28.svg", "class": "push-down-sm"}
           ]
         },
         "en": {
           "content": [
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "text", "value": "Instead of reacting explosively to everyday circumstances, try adopting daily habits that train the brain toward positivity.  Such as:" },
+        { "type": "title", "value": "Small Changes <br> Create  Big Results","style":"highlight" },
+        { "type": "text", "value": "Instead of reacting explosively to everyday circumstances, <br>try adopting daily habits that train the brain toward positivity.  Such as:" },
         { "type": "image", "value": "img28.svg", "class": "push-down-sm"}
           ]
         }
@@ -534,15 +536,15 @@
         "pt": 
             { "content": [ 
               { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-              { "type": "image", "value": "1.svg", "class":"small-image"},
-              { "type": "text", "value": "<b>Sono de Qualidade:</b>  Durma bem: 7 - 9 horas por noite. <b>Porquê:</b>  Dormir mal aumenta o cortisol; dormir bem reequilibra o humor e torna mais difícil a persistência de pensamentos negativos.", "class": "push-down"}
+              { "type": "image", "value": "1.svg", "class":"small-icon"},
+              { "type": "text", "value": "<b>Sono de Qualidade:</b> <br> Durma bem: 7 - 9 horas <br> por noite. <b><br>Porquê:</b> <br> Dormir mal aumenta o cortisol; dormir bem reequilibra  <br> o humor e torna mais difícil a persistência de pensamentos negativos.", "class": "push-down"}
           ] 
         },
         "en": 
             { "content": [
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "1.svg", "class":"small-image"},
-        { "type": "text", "value": "<b>Quality Sleep:</b>  Sleep well: 7 - 9 hours per night. <b>Why:</b>  Poor sleep increases cortisol; good sleep rebalances mood and makes it harder for negative thoughts to persist.", "class": "push-down"}
+        { "type": "title", "value": "Small Changes  <br>  Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "1.svg", "class":"small-icon"},
+        { "type": "text", "value": "<b>Quality Sleep:</b>  <br>  Sleep well: 7 - 9 hours <br> per night.  <br> <b>Why:</b>  <br> Poor sleep increases cortisol; good sleep rebalances mood and makes it harder for negative thoughts to persist.", "class": "push-down"}
       ]
           }
       },
@@ -551,15 +553,15 @@
         "pt": 
         { "content": [ 
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "image", "value": "1.1.svg", "class":"small-image" }, 
-          { "type": "text", "value": "<b>Dicas:</b>  Sono de qualidade. Crie ambiente tranquilo e organizado no quarto. Mantenha uma rotina de sono (dormir/ acordar sempre à mesma hora, mesmo aos fins de semana), e sem ecrãs uma hora antes de dormir.", "class": "push-down" }
+          { "type": "image", "value": "1.1.svg", "class":"small-icon" }, 
+          { "type": "text", "value": "<b>Dicas:</b>  Sono de qualidade. Crie ambiente tranquilo e organizado no quarto. Mantenha uma rotina de sono (dormir/ acordar sempre à mesma hora, mesmo aos fins de semana), e sem ecrãs <br> uma hora antes de dormir.", "class": "push-down" }
         ] 
       },
         "en": 
         { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "1.1.svg", "class":"small-image" },
-        { "type": "text", "value": "<b>Tips:</b>  Quality sleep. Create a calm and organized bedroom environment. Maintain a sleep routine (going to bed/waking up at the same time, even on weekends), and avoid screens one hour before sleeping.", "class": "push-down" }
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "1.1.svg", "class":"small-icon" },
+        { "type": "text", "value": "<b>Tips:</b>  Quality sleep.  <br> Create a calm and organized bedroom environment. Maintain a sleep routine (going to bed/waking up at the same time, even on weekends), <br> and avoid screens one hour before sleeping.", "class": "push-down" }
       ]
       }
     },
@@ -569,14 +571,14 @@
         "pt": 
         { "content": [ 
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "text", "value": "<b>Adicionalmente:</b> Sestas curtas são aceitáveis  se necessário, mas dê prioridade ao sono nocturno." }, 
+          { "type": "text", "value": "<b>Adicionalmente:</b> <br> Sestas curtas são aceitáveis  se necessário, mas dê prioridade ao sono nocturno." }, 
           { "type": "image", "value": "sleepingtyms.svg", "class":"small-image" } 
         ] 
       },
         "en": 
         { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "text", "value": "<b>Additionally:</b> Short naps are acceptable  if necessary, but prioritize nighttime sleep." },
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "text", "value": "<b>Additionally:</b> <br> Short naps are acceptable  if necessary, but prioritize nighttime sleep." },
         { "type": "image", "value": "sleepingtyms.svg", "class":"small-image" }
         ] 
       }
@@ -587,14 +589,14 @@
         "pt": 
         { "content": [ 
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "image", "value": "two.svg", "class":"small-image" },
-          { "type": "text", "value": "<b>Adicionalmente:</b>  Mexa-se um pouco todos  os dias!  Mesmo quando está sentado/a ou deitado/a. <b>Porquê:</b> A actividade baixa/ moderada reduz o cortisol, melhora  a boa-disposição.", "class": "push-down"} 
+          { "type": "image", "value": "two.svg", "class":"small-icon" },
+          { "type": "text", "value": "<b>Adicionalmente:</b> <br> Mexa-se um pouco todos <br> os dias! <br> Mesmo quando está sentado/a ou deitado/a. <br> <b>Porquê:</b><br>  A actividade baixa/ moderada reduz o cortisol, melhora  a boa-disposição.", "class": "push-down"} 
         ] 
       },
         "en": { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "two.svg", "class":"small-image" },
-        { "type": "text", "value": "<b>Additionally:</b>  Move a little every  day!  Even when sitting or lying down. <b>Why:</b> Low/moderate physical activity reduces cortisol and improves mood.", "class": "push-down"}
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "two.svg", "class":"small-icon" },
+        { "type": "text", "value": "<b>Additionally:</b> <br>  Move a little every  day! <br>  Even when sitting or <br> lying down.<br>  <b>Why:</b> <br> Low/moderate physical activity reduces cortisol and improves mood.", "class": "push-down"}
       ]
       }
       },
@@ -602,15 +604,16 @@
       {
         "SCREEN_ID": "L4_S6",
         "pt": { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "twopointone.svg", "class":"small-image" },
-        { "type": "text", "value": "<b>If you have physical limitations:</b> <ul><li>sit down and make circles with your arms, do gentle stretches, or small body movements while listening to music</li> <li>take short walks, if possible.</li>", "class": "push-down"}
+        { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" },
+        { "type": "image", "value": "twopointone.svg", "class":"small-icon" },
+        { "type": "text", "value": "Se tiver limitações físicas:</b> <ul> <li>Sente-se e faça movimentos circulares com os braços ou pequenos movimentos corporais enquanto <br> ouve música</li> <li>Pequenas caminhadas,  <br> se possível.</li></ul>", "class": "push-down"}
       ]
       },
         "en": { "content": [ 
-          { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "text", "value": "Last part of level 4." } 
-        ] 
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "twopointone.svg", "class":"small-icon" },
+        { "type": "text", "value": "<b>If you have physical limitations:</b> <ul><li>sit down and make circles with your arms, do gentle stretches or small body movements while listening to music</li> <li>take short walks, <br> if possible.</li>", "class": "push-down"}
+      ]
       }
 
       },
@@ -618,15 +621,15 @@
         "SCREEN_ID": "L4_S7",
         "pt": { "content": [
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" },
-          { "type": "image", "value": "twopointtwo.svg", "class":"small-image" },
-          { "type": "text", "value": "<b>Adicionalmente:</b> Experimente natação suave acompanhada e/ ou hidromassagem.", "class": "push-down" },
+          { "type": "image", "value": "twopointtwo.svg", "class":"small-icon" },
+          { "type": "text", "value": "<b>Adicionalmente:</b> <br>  Experimente natação suave acompanhada e/ ou hidromassagem.", "class": "push-down" },
           { "type": "image", "value": "relax.svg" }
         ]},
 
         "en": { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "twopointtwo.svg", "class":"small-image" },
-        { "type": "text", "value": "<b>Additionally:</b> Try gentle supervised swimming and/or hydrotherapy.", "class": "push-down" },
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "twopointtwo.svg", "class":"small-icon" },
+        { "type": "text", "value": "<b>Additionally:</b> <br>  Try gentle supervised swimming and/or hydrotherapy.", "class": "push-down" },
         { "type": "image", "value": "relax.svg" }
       ]
       }
@@ -636,15 +639,15 @@
         "SCREEN_ID": "L4_S8",
         "pt": { "content": [ 
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "image", "value": "three.svg", "class":"small-image" },
-          { "type": "text", "value": "<b>Coma alimentos que acalmam o corpo.  Porquê:</b> Uma dieta equilibrada (fruta/ legumes, cereais integrais, gorduras saudáveis) estabiliza  o açúcar no sangue e reduz  os picos de cortisol.  Limite também o excesso de açúcar/ cafeína.", "class": "push-down" }
+          { "type": "image", "value": "three.svg", "class":"small-icon" },
+          { "type": "text", "value": "<b>Coma alimentos que acalmam o corpo. Porquê:</b> <br>  Uma dieta equilibrada (fruta/ legumes, cereais integrais, gorduras saudáveis) estabiliza  o açúcar no sangue e reduz   <br> os picos de cortisol.  <br>  Limite também o excesso de açúcar/ cafeína.", "class": "push-down" }
 
         ] 
       },
         "en": { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "three.svg", "class":"small-image" },
-        { "type": "text", "value": "<b>Eat foods that calm the body.  Why:</b> A balanced diet (fruit/vegetables, whole grains, healthy fats) stabilizes blood sugar and reduces cortisol spikes.  Also limit excessive sugar/caffeine.", "class": "push-down" }
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "three.svg", "class":"small-icon" },
+        { "type": "text", "value": "<b>Eat foods that calm <br> the body. Why:</b>  <br> A balanced diet (fruit/ <br> vegetables, whole grains, healthy fats) stabilizes blood sugar and reduces cortisol spikes.  <br>  Also limit excessive sugar/caffeine.", "class": "push-down" }
       ]
       }
       },
@@ -652,15 +655,15 @@
         "SCREEN_ID": "L4_S9",
         "pt": { "content": [ 
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "image", "value": "threepoint1.svg", "class":"small-image" },
-          { "type": "text", "value": "<b>Coma alimentos que “acalmam o corpo”. Dicas simples:</b> Mais água, mais frutas/ legumes, menos alimentos processados. Aposte em refeições como sopas e batidos com frequencia!", "class": "push-down" }
+          { "type": "image", "value": "threepoint1.svg", "class":"small-icon" },
+          { "type": "text", "value": "<b>Coma alimentos que “acalmam o corpo”.  <br> Dicas simples:</b>  <br> Mais água, mais frutas/ legumes, menos alimentos processados. <br>  Aposte em refeições como sopas e batidos <br>  com frequencia!", "class": "push-down" }
  
         ] 
       },
         "en": { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "threepoint1.svg", "class":"small-image" },
-        { "type": "text", "value": "<b>Eat foods that “calm the body”. Simple tips:</b> More water, more fruits/vegetables, fewer processed foods. Include soups and smoothies regularly!", "class": "push-down" }
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "threepoint1.svg", "class":"small-icon" },
+        { "type": "text", "value": "<b>Eat foods that  <br> “calm the body”.  <br> Simple tips:</b>  <br> More water, more fruits/vegetables, fewer processed foods.  <br> Include soups and smoothies regularly!", "class": "push-down" }
       ]
       }
       },
@@ -668,15 +671,15 @@
         "SCREEN_ID": "L4_S10",
         "pt": { "content": [ 
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "image", "value": "4.svg", "class":"small-image" },
-          { "type": "text", "value": "<b>Pratique gratidão todos  os dias. Porquê:</b> Gratidão diária melhora o humor/ sono, reconfigura o cérebro para o positivo, reduzindo o cortisol.", "class": "push-down" } 
+          { "type": "image", "value": "4.svg", "class":"small-icon" },
+          { "type": "text", "value": "<b>Pratique gratidão todos  <br>  os dias.  <br> Porquê:</b> <br> Gratidão diária melhora o humor/ sono, reconfigura o cérebro para o positivo, reduzindo o cortisol.", "class": "push-down" } 
  
         ] 
       },
         "en": { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "4.svg", "class":"small-image" },
-        { "type": "text", "value": "<b>Practice gratitude every  day. Why:</b> Daily gratitude improves mood/sleep, rewires the brain toward positivity, and reduces cortisol.", "class": "push-down" }
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "4.svg", "class":"small-icon" },
+        { "type": "text", "value": "<b>Practice gratitude every  day. Why:</b> <br> Daily gratitude improves mood/sleep, rewires the brain toward positivity, <br> and reduces cortisol.", "class": "push-down" }
       ]
       }
       },
@@ -685,15 +688,15 @@
         "SCREEN_ID": "L4_S11",
         "pt": { "content": [ 
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "image", "value": "4point1.svg", "class":"small-image" }, 
-          { "type": "text", "value": "<b>Pratique gratidão todos  os dias. Exercicío fácil:</b> Á noite, anote 3 coisas boas do seu dia (mesmo pequenas acções como, “tomei um chá quente, lavei a loiça, tenho uma cama comfortável pra dormir, tenho familia”, etc.).  Ou diga-as em voz alta.", "class": "push-down"}
+          { "type": "image", "value": "4point1.svg", "class":"small-icon" }, 
+          { "type": "text", "value": "<b>Pratique gratidão todos  <br> os dias. <br>  Exercicío fácil:</b> <br>  Á noite, anote 3 coisas boas do seu dia (mesmo pequenas acções como, “tomei um chá quente, lavei a loiça, tenho uma cama comfortável pra dormir, tenho familia”, etc.).  <br>  Ou diga-as em voz alta.", "class": "push-down"}
 
         ] 
       },
         "en": { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "4point1.svg", "class":"small-image" },
-        { "type": "text", "value": "<b>Practice gratitude every  day. Easy exercise:</b> At night, write down 3 good things from your day (even small actions such as, “I had a warm tea, I washed the dishes, I have a comfortable bed to sleep in, I have family”, etc.).  Or say them out loud.", "class": "push-down"}
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "4point1.svg", "class":"small-icon" },
+        { "type": "text", "value": "<b>Practice gratitude every  day. Easy exercise:</b>  <br> At night, write down 3 good things from your day (even small actions such as, “I had a warm tea, I washed the dishes, I have a comfortable bed to sleep in, I have family”, etc.). <br> Or say them out loud.", "class": "push-down"}
       ]
       }
     },
@@ -702,14 +705,14 @@
         "SCREEN_ID": "L4_S12",
         "pt": { "content": [ 
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "image", "value": "5.svg", "class":"small-image" },
-          { "type": "text", "value": "<b>Conexões Sociais e Hobbies.  Porquê:</b> Atividades sociais reduzem o isolamento e stress psicológico e produzem hormonas de bem-estar (como dopamina  e oxitocina) e consequentemente influenciam beneficamente  o nosso bem-estar fisico e emocional.", "class": "push-down"} 
+          { "type": "image", "value": "5.svg", "class":"small-icon" },
+          { "type": "text", "value": "<b>Conexões Sociais  <br> e Hobbies. Porquê:</b> <br> Porque reduzem o isolamento e stress psicológico e produzem hormonas de bem-estar (como dopamina e oxitocina) e consequente- <br> mente influenciam benefica- <br> mente  o nosso bem-estar fisico e emocional.", "class": "push-down"} 
 
         ] 
       },
         "en": { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "5.svg", "class":"small-image" },
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "5.svg", "class":"small-icon" },
         { "type": "text", "value": "<b>Social Connections and Hobbies.  Why:</b> Social activities reduce isolation and psychological stress and produce feel-good hormones (such as dopamine  and oxytocin), positively influencing  our physical and emotional well-being.", "class": "push-down"}
       ]
       }
@@ -719,15 +722,15 @@
         "SCREEN_ID": "L4_S13",
         "pt": { "content": [ 
           { "type": "title", "value": "Pequenas Mudanças  Proporcionam  Grandes Resultados","style":"highlight" }, 
-          { "type": "image", "value": "5point1.svg", "class":"small-image" },
-          { "type": "text", "value": "<b>Conexões Sociais e Hobbies. Ideias:</b> <ul><li>Telefone a amigos/ familiares, ou convide-os para um café</li> <li>Oiça música/ radio e/ ou veja programas de humor</li> <li>Pratique atividades ligeiras</li> <li>Participe em actividades sociais que ocorrem á volta da sua área de residencia, e se não houver, procure fora dela!</li>", "class": "push-down" } 
+          { "type": "image", "value": "5point1.svg", "class":"small-icon" },
+          { "type": "text", "value": "<b>Ideias:</b> <ul><li>Telefone a amigos/ familiares, convide-os para um café/ chá</li> <li>Oiça música e programas de humor</li> <li>Pratique atividades ligeiras e sociais que ocorrem á volta da sua área de residencia, e se <br>não houver, procure fora dela!</li>", "class": "push-down" } 
 
         ] 
       },
         "en": { "content": [ 
-        { "type": "title", "value": "Small Changes  Create  Big Results","style":"highlight" },
-        { "type": "image", "value": "5point1.svg", "class":"small-image" },
-        { "type": "text", "value": "<b>Social Connections and Hobbies. Ideas:</b> <ul><li>Call friends/family, or invite them for a coffee</li> <li>Listen to music/radio and/or watch comedy shows</li> <li>Practice light activities</li> <li>Participate in social activities happening around your area of residence, and if there are none, look outside your area!</li>", "class": "push-down" }
+        { "type": "title", "value": "Small Changes   <br> Create  Big Results","style":"highlight" },
+        { "type": "image", "value": "5point1.svg", "class":"small-icon" },
+        { "type": "text", "value": "<b>Social Connections and Hobbies. Ideas:</b> <ul><li>Call friends/family, or invite them for a coffee</li> <li>Listen to music/radio and/or comedy shows</li> <li>Practice light activities happening around your area of residence, and if there are none, look outside your area!</li>", "class": "push-down" }
       ]
       }
       },
@@ -753,7 +756,7 @@
         "SCREEN_ID": "L4_S16",
         "pt": { "content": [ 
           { "type": "title", "value": "Reflexão Final","style":"highlight" }, 
-          { "type": "text", "value": "E se treinássemos o cérebro para o optimismo da mesma forma que o treinamos para  a negatividade?" }, 
+          { "type": "text", "value": "E se treinássemos o cérebro para  <br> o otimismo da mesma forma que  <br> o treinamos para  a negatividade?" }, 
           { "type": "image", "value": "atittude.svg", "class": "big-image" }, 
           { "type": "text", "value": "Não se trata de ignorar problemas — mas sim, entender que é possivel regular a nossa resposta interna a eles, sem prejudicar a nossa saude." }, 
           { "type": "image", "value": "healthy-heart.svg", "class": "small-image"  } 
@@ -762,10 +765,10 @@
         "en": 
         { "content": [ 
         { "type": "title", "value": "Final Reflection","style":"highlight" },
-        { "type": "text", "value": "What if we trained the brain for optimism in the same way we train it for  negativity?" },
+        { "type": "text", "value": "What if we trained the brain for optimism in the same way we train it  <br> for negativity?" },
         { "type": "image", "value": "atittude.svg", "class": "big-image" },
         { "type": "text", "value": "It’s not about ignoring problems — but rather understanding that it is possible to regulate our internal response to them, without harming our health." },
-        { "type": "image", "value": "healthy-heart.svg", "class": "big-image"  }
+        { "type": "image", "value": "healthy-heart.svg", "class": "small-image"  }
         ] 
       }
       },
@@ -773,14 +776,15 @@
       {
         "SCREEN_ID": "L4_S17",
         "pt": { "content": [ 
-        { "type": "title", "value": "Final Reflection","style":"highlight" },
-        { "type": "text", "value": "Did you understand the message of this content? If yes, then begin daily practice today.  If the content was not completely clear, no problem.  <b>Read and reread it as many times as necessary.</b>" },
+        { "type": "title", "value": "Reflexão Final","style":"highlight" },
+        { "type": "text", "value": "Compreendeu a mensagem deste conteúdo? <br>Se sim, comece a praticar diariamente! Consistencia é tudo! <br> Se o conteúdo não ficou totalmente claro, não se preocupe. <br><b> Leia e releia quantas vezes forem necessárias.</b>" },
         { "type": "image", "value": "img30.svg" }
         ] 
       },
         "en": { "content": [ 
-          { "type": "title", "value": "LEVEL 4 - Screen 17","style":"highlight" }, 
-          { "type": "text", "value": "Last part of level 4." } 
+        { "type": "title", "value": "Final Reflection","style":"highlight" },
+        { "type": "text", "value": "Did you understand the message of this content? <br>If yes, then begin daily practice today. <br>Consistency is everything! <br>If the content was not completely clear, no problem. <br> <b>Read and re-read it as many times as necessary.</b>" },
+        { "type": "image", "value": "img30.svg" }
         ] 
       }
       },
@@ -789,13 +793,13 @@
         "SCREEN_ID": "L4_S18",
         "pt": { "content": [ 
           { "type": "title", "value": "Reflexão Final","style":"highlight" }, 
-          { "type": "text", "value": "<b>Se precisa de uma razão para o fazer, aqui fica:</b> Ninguém vive pra sempre.  Mas é possivel viver-se  um dia-a-dia com melhor qualidade, enquanto “por cá se anda nesta missão”. Optimismo ofereçe melhor qualidade de vida,  e a sua saúde agradece!" }, 
+          { "type": "text", "value": "<b>Se precisa de uma razão para o fazer, aqui fica:</b><br> É sempre possivel viver-se um dia-a-dia com melhor qualidade, enquanto “por cá se anda nesta missão”. <br> Optimismo ofereçe melhor qualidade de vida,  e a sua saúde agradece!" }, 
           { "type": "image", "value": "img31.svg" } 
         ] 
       },
         "en": { "content": [ 
         { "type": "title", "value": "Final Reflection","style":"highlight" },
-        { "type": "text", "value": "<b>If you need a reason to do it, here it is:</b> Nobody lives forever.  But it is possible to live  day-to-day with better quality while “we are here on this mission”. Optimism provides a better quality of life,  and your health will thank you!" },
+        { "type": "text", "value": "<b>If you need a reason to do it, here it is:</b> It is always possible to live  day-to-day with better quality while “we are here on this mission”. <br>Optimism provides a better quality <br>of life,  and your health will thank you!" },
         { "type": "image", "value": "img31.svg" }
         ] 
       }
