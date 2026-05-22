@@ -84,14 +84,14 @@
           "content": [
             { "type": "title", "value": "<b>Stress produz cortisol.</b>" },
             { "type": "text", "value": "Cortisol é a hormona <br> do stress. <br> Cortisol elevado =  aumento <br> de  sensações desconfortáveis, tais como, ansiedade, baixa-tolerância, irritabilidade <br> e medo injustificado.", "class": "push-down-sm" },
-            { "type": "" }
+            { "type": "image", "value": "cortisol.svg", "class": "push-down-sm", "class": "small-image"}
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "Stress produces cortisol." },
             { "type": "text", "value": "Cortisol is the stress hormone. Elevated cortisol = increased uncomfortable sensations, such as anxiety, low tolerance, irritability, and fear." },
-            { "type": "" }
+            { "type": "image", "value": "cortisol.svg", "class": "small-image"}
 
             ]
         }
@@ -194,7 +194,7 @@
           "content": [
             { "type": "title", "value": "Sem interrupção, o ciclo repete-se.","style":"highlight" },
             { "type": "image", "value": "cycle.svg","class":"big-image" },
-            { "type": "image", "value": "cycle3.svg", "class":"small-image"}
+            { "type": "image", "value": "cycle3.svg", "class":"small-icon"}
           ]
         },
         "en": {
@@ -304,14 +304,14 @@
           "content": [
             { "type": "title", "value": "O que posso fazer no dia-a-dia?","style":"highlight" },
             { "type": "text", "value": "Sugestões diárias simples <br> e eficazes: <ul><li>Faça 3 respirações profundas e lentas, várias vezes durante o dia,</li> <li>Resolver o que depende de si e deixar o resto seguir o seu curso,</li> <li>Aceitar que o imprevisível também faz parte da vida.</li> "  },
-            { "type": "image", "value": "cat2.svg", "class":"small-image"}
+            { "type": ""}
           ]
         },
         "en": {
           "content": [
             { "type": "title", "value": "What can I do in daily life?","style":"highlight" },
             { "type": "text", "value": "Simple and effective <br> daily suggestions: <ul><li>Take 3 deep and slow breaths several times throughout the day,</li> <li>Resolve what depends on you and let the rest follow its course,</li> <li>Accept that unpredictability is also part of life.</li> "  },
-            { "type": "image", "value":"cat2.svg", "class": "small-image"}
+            { "type": ""}
           ]
         }
       }

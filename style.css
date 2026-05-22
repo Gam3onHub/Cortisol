@@ -3,13 +3,15 @@
      AND FORCES ALL ELEMENTS TO USE BORDER-BOX SIZING MODEL
      ============================================================ */
 
-  /* CSS VARIABLES - WILL AFFECT ALL SCREENS */
-     :root {
+:root {
     /* TITLE FONT: MIN SIZE ON SMALL SCREENS | GROWS WITH SCREEN WIDTH | MAX SIZE ON LARGE SCREENS */
-    --font-title: clamp(1.5rem, 2.6vw, 2rem);
+    --font-title: clamp(1.7rem, 2.6vw, 2rem);
 
     /* BODY FONT: MIN SIZE ON SMALL SCREENS | GROWS WITH SCREEN WIDTH | MAX SIZE ON LARGE SCREENS */
-    --font-body: clamp(1.1rem, 4.2vw, 1.4rem);
+    --font-body: clamp(1.4rem, 4.6vw, 1.6rem);
+
+    /* IMAGE SCALE MULTIPLIER — CONTROLLED BY JS SIZE BUTTONS */
+    --img-scale: 1;
   }
 
 
@@ -81,7 +83,7 @@
     left: 50%;                                  /* STARTS AT HORIZONTAL CENTER OF VIEWPORT */
     transform: translate(-50%, -50%);           /* OFFSETS BACK BY HALF OWN SIZE — PERFECTLY CENTERS THE APP */
     overflow: hidden;                           /* CLIPS ANY CONTENT THAT EXCEEDS THE APP BOUNDARIES */
-    padding: 12px 12px 130px 12px;              /* TOP RIGHT BOTTOM LEFT — BOTTOM RESERVES SPACE FOR NAV + PROGRESS BAR */
+    padding: 12px 12px 130px 12px;             /* TOP RIGHT BOTTOM LEFT — BOTTOM RESERVES SPACE FOR NAV + PROGRESS BAR */
     background: linear-gradient(to bottom, #EDEDED, #DADCF0); /* SOFT GREY-TO-LAVENDER GRADIENT BACKGROUND */
   }
 
@@ -203,7 +205,9 @@
     justify-content: flex-start;                   /* CONTENT BEGINS AT THE TOP OF THE CARD */
     align-items: center;                           /* CENTERS CONTENT HORIZONTALLY */
     gap: 10px;                                     /* SPACE BETWEEN STACKED CONTENT ELEMENTS */
-    overflow: hidden;                              /* CLIPS CONTENT AND IMAGES THAT EXCEED THE CARD BOUNDARY */
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;             /* CLIPS CONTENT AND IMAGES THAT EXCEED THE CARD BOUNDARY */
     background: rgba(245, 245, 245, 0.6);          /* SEMI-TRANSPARENT WHITE GLASS CARD BACKGROUND */
     border-top: 3px solid rgba(254,253,223,0.9);   /* SUBTLE TOP HIGHLIGHT BORDER FOR GLASS EFFECT */
     border-left: 3px solid rgba(254,253,223,0.9);  /* SUBTLE LEFT HIGHLIGHT BORDER FOR GLASS EFFECT */
@@ -213,12 +217,14 @@
   }
 
 
+
+
   /* ============================================================
      SCREEN TITLE (H1) — SHOWN AT THE TOP OF EACH CONTENT SCREEN
      ============================================================ */
   .content h1,
   .content h1.special-title {
-    margin-top: 45px;   /* PUSHES TITLE BELOW THE LEVEL INDICATOR BADGE */
+    margin-top: 20px;   /* PUSHES TITLE BELOW THE LEVEL INDICATOR BADGE */
     padding: 15px 12px; /* Updated: Changed 20px to 15px */
     width: 100%;        /* FILLS FULL CARD WIDTH */
     font-size: var(--font-title);  /* CONTROLS THE SIZE OF ALL SCREEN TITLES AS PER VARIABLE SET AT TOP OF CSS CODE */
@@ -963,7 +969,7 @@
     gap: 10px;                  /* SPACE BETWEEN LEFT COLUMN AND RIGHT CONTENT */
     padding: 0 16px;            /* HORIZONTAL BREATHING ROOM */
     margin-top: auto;           /* PUSHES ROW DOWN IN A FLEX PARENT */
-    margin-bottom: auto;        /* EQUALIZES TOP AND BOTTOM MARGIN FOR VERTICAL CENTERING */
+    margin-bottom: 80px;        
     width: 100%;                /* FILLS FULL PARENT WIDTH */
   }
 
@@ -1055,26 +1061,31 @@
 
 
 
-  /* ============================================================
-     LEVEL INDICATOR BADGE — TOP-LEFT CORNER OF EACH CONTENT SCREEN
-     SHOWS WHICH LEVEL THE USER IS CURRENTLY VIEWING
-     ============================================================ */
-  .level-indicator {
-    position: absolute;                         /* POSITIONED RELATIVE TO .CONTENT */
-    top: 10px;                                  /* 10PX FROM THE TOP OF THE CONTENT CARD */
-    left: 15px;                                 /* ALIGNS WITH H1 LEFT PADDING */
-    font-size: 0.75rem;                         /* SMALL LABEL TEXT */
-    font-weight: bold;                          /* BOLD FOR VISIBILITY */
-    color: black;                               /* BLACK TEXT */
-    background: rgba(350, 300, 218, 0.15);      /* VERY SUBTLE WARM TINT BACKGROUND */
-    border: 1px solid rgba(159, 172, 350, 0.8); /* SOFT BLUE BORDER */
-    border-radius: 10px;                        /* ROUNDED PILL SHAPE */
-    padding: 3px 10px;                          /* SMALL INNER SPACING */
-    z-index: 100;                               /* ALWAYS VISIBLE — ABOVE ALL CONTENT */
-    pointer-events: none;                       /* NON-INTERACTIVE — DISPLAY ONLY */
-    letter-spacing: 0.05em;                     /* SLIGHT LETTER SPACING FOR READABILITY */
-    text-transform: uppercase;                  /* DISPLAYS TEXT IN ALL CAPS */
-  }
+
+/* ============================================================
+   LEVEL INDICATOR BADGE — FROZEN TOP-CENTER, ALIGNED WITH CONTROLS
+   ============================================================ */
+.level-indicator {
+    position: static;
+    transform: none;
+    height: 28px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, rgba(50,0,30,10.35) 0%, rgba(130,50,30,0.2) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-bottom-color: rgba(200, 200, 220, 0.3);
+    border-right-color: rgba(200, 200, 220, 0.3);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
 
 
   /* ============================================================
@@ -1174,11 +1185,11 @@
      ============================================================ */
 
   /* DEFAULT SIZE FOR ALL CONTENT IMAGES (EXCLUDING DINO) */
-  .content img:not(.dino) {
+.content img:not(.dino) {
     display: block;     /* ALLOWS MARGIN: AUTO CENTERING */
     margin: 0 auto;     /* CENTERS IMAGE HORIZONTALLY */
     width: 55%;                  /* DEFAULT: 55% OF CARD WIDTH */
-    max-height: 25vh;            /* CAPS IMAGE HEIGHT RELATIVE TO VIEWPORT — PREVENTS OVERFLOW AT ANY ZOOM LEVEL */
+    max-height: calc(25vh * var(--img-scale)); /* CAPS IMAGE HEIGHT — SCALES WITH --IMG-SCALE VARIABLE */
     height: auto;                /* MAINTAINS ASPECT RATIO */
     object-fit: contain;         /* SCALES IMAGE TO FIT WITHOUT CROPPING */
   }
@@ -1203,14 +1214,14 @@
   .content img.small-image {
     width: 100% !important;      /* OVERRIDES DEFAULT WIDTH */
     max-width: 150px !important; /* CAPS AT 165PX */
-    max-height: 60vh !important; /* CAPS AT 65% VIEWPORT HEIGHT */
+    max-height: 45vh !important; /* CAPS AT 65% VIEWPORT HEIGHT */
     height: auto !important;     /* MAINTAINS ASPECT RATIO */
   }
 
     /* SMALL ICON */
   .content img.small-icon {
     width: 100% !important;      /* OVERRIDES DEFAULT WIDTH */
-    max-width: 80px !important; /* CAPS AT 165PX */
+    max-width: 95px !important; /* CAPS AT 85PX */
     max-height: 60vh !important; /* CAPS AT 65% VIEWPORT HEIGHT */
     height: auto !important;     /* MAINTAINS ASPECT RATIO */
   }
@@ -1288,12 +1299,19 @@
   }
 
 
-  .content.win-screen {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
-  }
+.content.win-screen {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  position: absolute; /* BREAKS OUT OF CARD FLOW */
+  inset: 0;           /* FILLS ENTIRE APP CONTAINER */
+  max-height: 100%;   /* REMOVES CARD HEIGHT CAP */
+  border-radius: 0;   /* NO ROUNDED CORNERS ON FULL SCREEN */
+  justify-content: center; /* CENTERS IMAGE VERTICALLY */
+  z-index: 50;        /* ABOVE ALL OTHER CONTENT */
+}
+
 
 
   /* WIN SCREEN IMAGE — PLAYS ENTRANCE THEN CONTINUOUS GLOW */
@@ -1432,9 +1450,7 @@
 
  /* LANGUAGE TOGGLE SWITCH */
 .lang-toggle {
-  position: absolute;
-  top: 25px;
-  right: 25px;
+  position: static;
   width: 88px;
   height: 28px;
   background: linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(200,205,230,0.2) 100%);
@@ -1541,3 +1557,62 @@
 
 
 
+
+/* ============================================================
+   SIZE CONTROL BUTTONS — A- AND A+ POSITIONED TOP-LEFT OF APP
+   ============================================================ */
+.size-controls {
+  position: static;
+  display: flex;
+  gap: 5px;
+  z-index: 100;
+}
+
+.size-btn {
+  width: 36px;
+  height: 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(200,205,230,0.2) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.6),
+    0 4px 12px rgba(0,0,0,0.12);
+  color: rgba(60, 60, 100, 0.85);
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.size-btn:active {
+  transform: scale(0.93);
+}
+
+
+/* ENG/PT LANGUAGE TINT — PT IS DEFAULT WARM WHITE, EN GETS A COOL BLUE TINT */
+.content.lang-en {
+  background: rgba(200, 260, 220, 0.65); /* COOL BLUE-GREY TINT FOR ENGLISH VERSION */
+  border-top-color: rgba(180, 200, 240, 0.9);   /* MATCHES BLUE TINT ON TOP BORDER */
+  border-left-color: rgba(180, 200, 240, 0.9);  /* MATCHES BLUE TINT ON LEFT BORDER */
+}
+
+
+
+/* ============================================================
+   CONTROLS BAR — SITS BETWEEN CONTENT CARD AND PROGRESS BAR
+   ============================================================ */
+.controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6px 8px;
+  flex-shrink: 0;
+  z-index: 100;
+}

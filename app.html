@@ -22,22 +22,24 @@
 
 
 
-<!-- LANGUAGE TOGGLE -->
-<div class="lang-toggle" id="lang-toggle" onclick="toggleLang()">
-  <span class="toggle-label" id="label-pt">PT</span>
-  <div class="toggle-knob"></div>
-  <span class="toggle-label" id="label-en">ENG</span>
-</div>
 
-
-
-
-    <!-- CONTENT AREA -->
+<!-- SIZE CONTROLS -->
+<!-- CONTENT AREA -->
 <main class="content" id="content"></main>
 
-
-
-
+<div class="controls-bar">
+  <div class="size-controls">
+    <button class="size-btn" onclick="changeSize(-1)">A−</button>
+    <button class="size-btn" onclick="changeSize(1)">A+</button>
+  </div>
+  <!-- LEVEL INDICATOR -->
+  <div class="level-indicator" id="level-indicator"></div>
+  <div class="lang-toggle" id="lang-toggle" onclick="toggleLang()">
+    <span class="toggle-label" id="label-pt">PT</span>
+    <div class="toggle-knob"></div>
+    <span class="toggle-label" id="label-en">ENG</span>
+  </div>
+</div>
 
 <!-- PROGRESS BAR -->
 <div class="progress-container">
@@ -142,6 +144,9 @@ window.switchLang = (newLang) => {
     const screenId = screen?.SCREEN_ID;
 
     contentArea.classList.remove("l4-s21-layout", "image-after-title", "win-screen");
+    contentArea.classList.toggle("lang-en", lang === "en"); /* ADDS BLUE TINT CLASS 
+
+    WHEN ENGLISH IS ACTIVE */
     if (screenId === "L4_S21") contentArea.classList.add("l4-s21-layout");
 
     // Pulls from screen[lang] dynamically (pt or en)
@@ -153,8 +158,10 @@ window.switchLang = (newLang) => {
 
       if (screenId === "L4_S19") {
         contentArea.classList.add("win-screen");
-        bottomNav.style.display = "none";
-        progressContainer.style.display = "none";
+bottomNav.style.display = "none";
+progressContainer.style.display = "none";
+document.querySelector(".controls-bar").style.display = "none"; // HIDE CONTROLS ON WIN SCREEN
+
 
         content.forEach(block => {
           let el;
@@ -179,10 +186,7 @@ window.switchLang = (newLang) => {
         return;
       }
 
-      const levelLabel = document.createElement("div");
-      levelLabel.className = "level-indicator";
-      levelLabel.innerText = lang === "pt" ? `Nível ${levelIndex + 1}` : `Level ${levelIndex + 1}`;
-      contentArea.appendChild(levelLabel);
+document.getElementById("level-indicator").innerText = lang === "pt" ? `Nível ${levelIndex + 1}` : `Level ${levelIndex + 1}`;
 
       const TITLE_DELAY  = 0.1;
       const STAGGER_STEP = 0.22;
@@ -298,6 +302,26 @@ history.pushState(null, "", location.href);
 window.addEventListener("popstate", () => {
   history.pushState(null, "", location.href);
 });
+
+// SIZE CONTROL — STEPS THROUGH FONT AND IMAGE SIZES
+// sizeStep can be: 0 (small), 1 (normal), 2 (large), 3 (x-large)
+const fontSizes  = [13, 16, 19];   // HTML BASE FONT SIZE IN PX FOR EACH STEP — 3 LEVELS ONLY
+const imgScales  = [0.75, 1, 1.25]; // IMAGE SCALE MULTIPLIER FOR EACH STEP — 3 LEVELS ONLY
+let sizeStep = parseInt(localStorage.getItem("sizeStep") ?? "1", 10);
+
+function applySize() {
+  if (!document.getElementById("content")) return; // ONLY APPLY ON LEVEL SCREENS, NOT MENUS
+  document.documentElement.style.fontSize = fontSizes[sizeStep] + "px";
+  document.documentElement.style.setProperty("--img-scale", imgScales[sizeStep]);
+}
+
+window.changeSize = (direction) => {
+  sizeStep = Math.min(2, Math.max(0, sizeStep + direction)); // MAX IS 2 — 3 LEVELS ONLY (0, 1, 2)
+  localStorage.setItem("sizeStep", sizeStep);
+  applySize();
+};
+
+applySize(); // APPLY SAVED SIZE ON PAGE LOAD
 
 window.goHome = () => {
   window.location.href = "index.html";
