@@ -18,7 +18,7 @@
         <div class="menu05-menu" id="levelMenu"></div>
 
         <div class="menu05-dino-wrap">
-          <img class="menu05-img" src="nofffa6.svg">
+          <img class="menu05-img" id="dino-img" src="nofffa6.svg">
         </div>
 
       </div>
@@ -44,6 +44,9 @@
 const params = new URLSearchParams(window.location.search);
 const lang = (params.get("lang") || "pt").toLowerCase();
 
+// SWAPS DINO IMAGE BASED ON ACTIVE LANGUAGE
+document.getElementById("dino-img").src = lang === "en" ? "nofffa6-ENG.svg" : "nofffa6.svg";
+
 // CONGRATS TEXT
 const text = {
   pt: "Parabéns por completar <br>esta leitura!<br><br>Aprender sobre a nossa saúde <br>é sempre tempo bem investido <br>e aumenta o nosso amor próprio!",
@@ -58,6 +61,13 @@ linksBtn.innerText = btnText[lang] || btnText.pt;
 linksBtn.onclick = () => {
   window.location.href = `menu06.html?lang=${lang}`;
 };
+
+/* HIDES LINKS BUTTON IN ENGLISH VERSION */
+linksBtn.onclick = () => {
+  window.location.href = `menu06.html?lang=${lang}`;
+};
+if (lang === "en") linksBtn.style.display = "none"; 
+
 
 // LEVEL COINS (1–4)
 const menu = document.getElementById("levelMenu");
@@ -118,5 +128,13 @@ window.addEventListener("popstate", () => {
 });
 
 </script>
+
+
+<script>
+  // FORCES BROWSER TO RELOAD FRESH CSS — PREVENTS CACHED OLD STYLES
+  document.querySelector('link[rel="stylesheet"]').href = "style.css?v=" + Date.now();
+</script>
+
+
 </body>
 </html>

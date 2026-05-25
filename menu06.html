@@ -37,9 +37,6 @@
 
     </div>
 
-    <!-- IMAGE -->
-    <img src="nofffa5.svg" class="menu05-main-img">
-
   </main>
 
   <!-- BOTTOM NAV -->
@@ -74,6 +71,11 @@ window.addEventListener("popstate", () => {
   history.pushState(null, "", location.href);
 });
 
+</script>
+
+<script>
+  // FORCES BROWSER TO RELOAD FRESH CSS — PREVENTS CACHED OLD STYLES
+  document.querySelector('link[rel="stylesheet"]').href = "style.css?v=" + Date.now();
 </script>
 
 </body>

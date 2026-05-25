@@ -135,7 +135,33 @@
     background-position: center;       /* CENTERS THE IMAGE */
     opacity: 0.85;                     /* SLIGHTLY TRANSPARENT FOR TEXT READABILITY */
     z-index: 0;                        /* STAYS BEHIND ALL HOME SCREEN CONTENT */
+  
+    /* ADDED FOR THE BRAIN PULSING EFFECT */
+    animation: brainPulse 6s ease-in-out infinite; 
+    transform-origin: center;          /* ENSURES IT PULSES FROM THE MIDDLE */
   }
+
+
+
+  /* ============================================================
+     REPLICATE A PULSING EFFECT — ANIMATION FOR THE BRAIN BG
+     ============================================================ */
+  @keyframes brainPulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.85;
+    }
+    50% {
+      transform: scale(1.06);          /* GENTLY SCALES UP BY 6% */
+      opacity: 0.95;                   /* SLIGHTLY BRIGHTENS */
+    }
+    100% {
+      transform: scale(1);             /* SMOOTHLY RETURNS TO ORIGINAL SIZE */
+      opacity: 0.85;
+    }
+  }
+
+
 
   /* FOREGROUND CONTENT ON HOME SCREEN (TITLE, BUTTONS) */
   .home-content {
@@ -151,6 +177,11 @@
     color: white;            /* ALL TEXT ON HOME SCREEN IS WHITE */
   }
 
+
+/* TARGETS ONLY THE TITLE INSIDE THE HOME CONTENT TO MAKE IT TRANSPARENT */
+  .home-content h1 {
+    opacity: 0.75;  /* LOWER THIS NUMBER FOR MORE TRANSPARENCY, RAISE IT FOR LESS (MAX IS 1) */
+  }
 
   /* ============================================================
      LANGUAGE SELECTION BUTTONS (FLAGS)
@@ -668,8 +699,8 @@
   /* DINOSAUR CHARACTER IMAGE SHOWN ON MENU SCREENS */
   .dino {
     position: absolute;  /* POSITIONED WITHIN .MENU */
-    bottom: 75px;        /* SITS NEAR THE BOTTOM OF THE MENU */
-    right: 9px;          /* OFFSET FROM THE RIGHT EDGE */
+    bottom: 85px;        /* SITS NEAR THE BOTTOM OF THE MENU */
+    right: -18px;          /* OFFSET FROM THE RIGHT EDGE */
     width: 140px;        /* DINO IMAGE WIDTH */
     z-index: 2;          /* ABOVE PATH BUT BELOW SPEECH BUBBLES */
   }
@@ -707,8 +738,8 @@
      ============================================================ */
   .menu02 .dino {
     position: absolute; /* OVERRIDES DEFAULT DINO POSITIONING */
-    bottom: 200px;      /* HIGHER POSITION FOR MENU02 LAYOUT */
-    left: -30px;        /* SHIFTS DINO TO THE LEFT SIDE */
+    bottom: 189px;      /* HIGHER POSITION FOR MENU02 LAYOUT */
+    left: -28px;        /* SHIFTS DINO TO THE LEFT SIDE */
     width: 190px;       /* SLIGHTLY LARGER DINO FOR MENU02 */
     z-index: 1;         /* BEHIND SPEECH BUBBLE */
   }
@@ -851,8 +882,8 @@
      MENU04 — SPECIFIC DINO AND SPEECH BUBBLE POSITIONING
      ============================================================ */
   .menu04 .dino {
-    top: 79px;      /* HIGHER DINO POSITION FOR MENU04 */
-    left: -32px;        /* SHIFTS DINO TO THE LEFT */
+    top: 64px;      /* HIGHER DINO POSITION FOR MENU04 */
+    left: -33px;        /* SHIFTS DINO TO THE LEFT */
     width: 195px;       /* DINO SIZE */
     position: absolute; /* POSITIONED WITHIN .MENU */
     z-index: 1;         /* BEHIND SPEECH BUBBLE */
@@ -861,8 +892,8 @@
   /* SPEECH BUBBLE FOR MENU04 */
   .menu04 .speech4 {
     position: absolute;                      /* POSITIONED WITHIN .MENU */
-    top: 10px;                              /* VERTICAL POSITION */
-    left: -25px;                             /* LEFT OFFSET */
+    top: 5px;                              /* VERTICAL POSITION */
+    left: -18px;                             /* LEFT OFFSET */
     width: 200px;                            /* BUBBLE WIDTH */
     background: white;                       /* WHITE BUBBLE */
     padding: 12px 20px;                      /* INNER SPACING */
@@ -1159,11 +1190,11 @@
     margin: 10px 0;           /* VERTICAL SPACING */
   }
 
-  /* WRAPPER FOR THE LIST OF LINKS */
+  /* WRAPPER FOR THE LIST OF LINKS ON MENU06.HTML*/
   .links-box {
     display: flex;           /* STACKS LINKS VERTICALLY */
     flex-direction: column;  /* VERTICAL LAYOUT */
-    gap: 12px;               /* SPACE BETWEEN EACH LINK */
+    gap: 72px;               /* SPACE BETWEEN EACH LINK */
     margin-top: 10px;        /* TOP SPACING */
   }
 
@@ -1214,7 +1245,7 @@
   .content img.small-image {
     width: 100% !important;      /* OVERRIDES DEFAULT WIDTH */
     max-width: 150px !important; /* CAPS AT 165PX */
-    max-height: 45vh !important; /* CAPS AT 65% VIEWPORT HEIGHT */
+    max-height: 40vh !important; /* CAPS AT 40% VIEWPORT HEIGHT */
     height: auto !important;     /* MAINTAINS ASPECT RATIO */
   }
 
@@ -1613,6 +1644,8 @@
   justify-content: space-between;
   width: 100%;
   padding: 6px 8px;
+  margin-top: 10px;   /* PUSHES BAR AWAY FROM .CONTENT CARD */
+  margin-bottom: -10px; /* CREATES BREATHING ROOM ABOVE PROGRESS BAR */
   flex-shrink: 0;
   z-index: 100;
 }
