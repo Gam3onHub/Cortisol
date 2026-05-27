@@ -4,79 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Links úteis</title>
-
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-<div class="app no-nav">
-
+<div class="app">
   <main class="content menu05-screen">
-
-    <!-- TITLE -->
     <h1 class="special-title">Links úteis</h1>
-
-  
-
-    
-    <!-- LINKS BOX -->
     <div class="links-box">
-
-      <a href="https://saudemental.min-saude.pt" target="_blank">
-        Portal Saúde Mental
-      </a>
-
-      <a href="https://www.sns24.gov.pt" target="_blank">
-        SNS 24
-      </a>
-
-      <a href="https://ipdj.gov.pt/bem-estar-e-saude-mental" target="_blank">
-        IPDJ - Bem-estar mental
-      </a>
-
+      <a href="https://saudemental.min-saude.pt" target="_blank">Portal Saúde Mental</a>
+      <a href="https://www.sns24.gov.pt" target="_blank">SNS 24</a>
+      <a href="https://ipdj.gov.pt/bem-estar-e-saude-mental" target="_blank">IPDJ - Bem-estar mental</a>
     </div>
-
   </main>
 
-  <!-- BOTTOM NAV -->
-<nav class="bottom-nav" id="bottomNav">
-  <img class="nav-bg" id="nav-bg" src="menu06-back.svg" alt="">
-  <button class="nav-btn back-btn" onclick="goBack()">
-    <img src="left.svg" alt="Back">
-  </button>
-</nav>
-
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-btn home-btn" onclick="goBack()">
+      <img src="left.svg" alt="Back">
+    </button>
+  </nav>
+</div>
 <script>
 function goBack() {
   const params = new URLSearchParams(window.location.search);
   const lang = params.get("lang") || "pt";
-  const level = params.get("level");
-  const screen = params.get("screen");
-
-  if (level !== null && screen !== null) {
-    window.location.href = `menu05.html?lang=${lang}`;
-  } else {
-    window.history.back(); // fallback for any other entry point
-  }
+  window.location.href = `menu05.html?lang=${lang}`;
 }
-
-function goHome() {
-  window.location.href = "index.html";
-}
-setSpeech();
-setProgress();
 history.pushState(null, "", location.href);
 window.addEventListener("popstate", () => {
   history.pushState(null, "", location.href);
 });
-
 </script>
-
 <script>
-  // FORCES BROWSER TO RELOAD FRESH CSS — PREVENTS CACHED OLD STYLES
   document.querySelector('link[rel="stylesheet"]').href = "style.css?v=" + Date.now();
 </script>
-
 </body>
 </html>

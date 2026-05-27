@@ -1007,8 +1007,8 @@
   /* DINO/CHARACTER IMAGE USED IN MENU05 SCREENS */
   .menu05-img {
     width: 100% !important;      /* FORCES FULL WIDTH */
-    max-width: 320px !important; /* CAPS AT 320PX */
-    height: auto !important;     /* MAINTAINS ASPECT RATIO */
+    max-width: 250px !important; /* CAPS AT 250PX */
+    height: 222px !important;     /* MAINTAINS ASPECT RATIO */
     max-height: 260px !important; /* PREVENTS IMAGE FROM BEING TOO TALL */
     object-fit: contain !important; /* SCALES WITHOUT CROPPING */
     align-self: flex-start;       /* ALIGNS IMAGE TO TOP OF FLEX ROW */
@@ -1091,7 +1091,14 @@
   }
 
 
-
+/* MENU05 LANG TOGGLE — CENTERED ABOVE HOME BUTTON */
+.menu05-lang-wrap {
+  position: absolute !important;
+  bottom: 95px;            /* SITS JUST ABOVE THE NAV BAR */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
 
 /* ============================================================
    LEVEL INDICATOR BADGE — FROZEN TOP-CENTER, ALIGNED WITH CONTROLS
@@ -1122,34 +1129,34 @@
   /* ============================================================
      MENU05 "LINKS ÚTEIS" BUTTON — ACTION BUTTON AT BOTTOM OF MENU05
      ============================================================ */
-  .menu05-button {
+.menu05-button {
     background: #9FACDA;                        /* BLUE-PURPLE BUTTON COLOR */
     color: white;                               /* WHITE BUTTON TEXT */
     border: none;                               /* NO BORDER */
     border-radius: 22px;                        /* FULLY ROUNDED PILL BUTTON */
-    padding: 8px 10px;                         /* INNER SPACING */
-    font-size: 1rem;                         /* SLIGHTLY LARGER TEXT FOR READABILITY */
+    padding: 8px 14px;                          /* INNER SPACING */
+    font-size: 1rem;                            /* READABLE FONT SIZE */
     font-weight: bold;                          /* BOLD BUTTON LABEL */
     cursor: pointer;                            /* POINTER CURSOR ON HOVER */
     box-shadow: 0 4px 12px rgba(0,0,0,0.18);   /* SHADOW TO LIFT BUTTON */
-    align-self: flex-end;                       /* ALIGNS BUTTON TO RIGHT IN FLEX CONTAINER */
     white-space: nowrap;                        /* PREVENTS TEXT FROM WRAPPING */
-    position: absolute;        /* POSITIONS BUTTON INSIDE NAV BAR */
-    left: 4px;                 /* ALIGNS TO LEFT SIDE OF NAV — SAME AS BACK-BTN */
-    top: 50%;                  /* VERTICAL CENTER */
-    transform: translateY(-50%); /* PERFECT VERTICAL CENTERING */
-    z-index: 2;                /* ABOVE NAV BACKGROUND */
+    margin-top: 10px;                           /* SPACING BELOW COIN COLUMN */
+    align-self: center;                         /* CENTERS UNDER THE COIN COLUMN */
+    z-index: 2;
   }
 
+
+
   /* MENU05 LAYOUT WRAPPER — VERTICAL FLEX COLUMN FOR THE WHOLE MENU05 SCREEN */
-  .menu05-layout {
-    display: flex;           /* VERTICAL FLEX LAYOUT */
-    flex-direction: column;  /* STACKS CHILDREN VERTICALLY */
-    height: 100%;            /* FILLS FULL PARENT HEIGHT */
-    padding: 35px 10px 10px; /* TOP: 35PX TO CLEAR LEVEL BADGE, SIDES: 10PX, BOTTOM: 10PX */
-    justify-content: center; /* VERTICALLY CENTERS THE LAYOUT CONTENT */
-    margin-top: 0;           /* NO TOP MARGIN */
-  }
+    .menu05-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 8px 4px 4px;   /* REDUCED PADDING FOR TWO-COLUMN FIT */
+    margin-top: 0;
+    }
+
+
 
   /* TEXT SHOWN BELOW THE MENU05 IMAGE */
   .menu05-text {
@@ -1160,6 +1167,38 @@
     padding: 0 10px;       /* HORIZONTAL PADDING */
   }
 
+
+
+
+/* MENU05 TWO-COLUMN LAYOUT */
+.menu05-cols {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 10px;
+  height: 100%;
+  padding: 10px;
+}
+
+
+.menu05-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 210px;                /* INCREASED GAP BETWEEN BAR AND LINKS BUTTON */
+  flex-shrink: 0;
+  justify-content: flex;
+  padding-bottom: 10px;
+}
+
+
+.menu05-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
 
   /* ============================================================
      MENU05 / LINKS ÚTEIS SCREEN LAYOUT
