@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body style="opacity:0">
 
 
 <div class="app no-nav">
@@ -87,6 +87,16 @@ function setSpeech() {
     en: `Welcome! <br>Ready to start?<br>Tap level 1!`
   };
   speech.innerHTML = text[lang] || text.pt;
+}
+
+
+// CHECK SAVED PROGRESS AND SKIP TO CORRECT MENU
+const savedLevel = parseInt(localStorage.getItem("maxUnlockedLevel") ?? "0", 10);
+if (savedLevel >= 1) {
+  const _lang = new URLSearchParams(window.location.search).get("lang") || "pt";
+  window.location.replace(`menu0${savedLevel + 1}.html?lang=${_lang}`);
+} else {
+  document.body.style.opacity = "1";
 }
 
 // INIT

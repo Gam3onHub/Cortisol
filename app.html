@@ -34,11 +34,7 @@
   </div>
   <!-- LEVEL INDICATOR -->
   <div class="level-indicator" id="level-indicator"></div>
-  <div class="lang-toggle" id="lang-toggle" onclick="toggleLang()">
-    <span class="toggle-label" id="label-pt">PT</span>
-    <div class="toggle-knob"></div>
-    <span class="toggle-label" id="label-en">ENG</span>
-  </div>
+
 </div>
 
 <!-- PROGRESS BAR -->
@@ -275,7 +271,12 @@ if (isHub) {
       window.location.href = "menu05.html?lang=" + lang;
       return;
     }
-    const nextLevel = levelIndex + 1;
+const nextLevel = levelIndex + 1;
+    // SAVE HIGHEST COMPLETED LEVEL TO BROWSER MEMORY
+    const currentMax = parseInt(localStorage.getItem("maxUnlockedLevel") ?? "0", 10);
+    if (nextLevel > currentMax) {
+      localStorage.setItem("maxUnlockedLevel", nextLevel);
+    }
     if (nextLevel < levels.length) {
       window.location.href = `menu0${nextLevel + 1}.html?lang=${lang}`;
     } else {
