@@ -537,7 +537,7 @@
     left: 50%;                    /* STARTS AT CENTER FOR TRANSFORM ALIGNMENT */
     transform: translateX(-50%);  /* CENTERS THE BAR HORIZONTALLY */
     width: calc(100% - 68px);     /* FULL WIDTH MINUS SIDE PADDING */
-    height: 4px;                  /* THIN TRACK HEIGHT */
+    height: 6px;                  /* THIN TRACK HEIGHT */
     background: black;            /* DARK TRACK BACKGROUND */
     border-radius: 3px;           /* SLIGHTLY ROUNDED TRACK ENDS */
     overflow: visible;            /* ALLOWS GLOW EFFECT TO EXTEND BEYOND TRACK */
@@ -545,16 +545,12 @@
   }
 
   /* THE FILLED PORTION OF THE PROGRESS BAR — WIDTH IS SET BY JAVASCRIPT */
-  .progress-bar {
+.progress-bar {
     height: 100%;                            /* FILLS FULL TRACK HEIGHT */
     width: 30%;                              /* INITIAL WIDTH — UPDATED BY JS BASED ON SCREEN INDEX */
     background: #FEAA35;                     /* ORANGE/AMBER FILL COLOR */
-    box-shadow:                              /* MULTI-LAYER GLOW EFFECT AROUND THE PROGRESS BAR */
-      0 0 6px rgba(254, 170, 53, 0.7),
-      0 0 12px rgba(254, 170, 53, 0.6),
-      0 0 20px rgba(254, 170, 53, 0.5);
-    animation: progressGlowPulse 2s infinite ease-in-out; /* CONTINUOUSLY PULSES THE GLOW */
-    transition: width 0.3s ease;             /* SMOOTHLY ANIMATES WIDTH CHANGES ON SCREEN ADVANCE */
+    animation: progressGlowPulse 0.6s infinite alternate ease-in-out; /* FAST BACK-AND-FORTH PULSE */
+    transition: width 0.6s ease;             /* SMOOTHLY ANIMATES WIDTH CHANGES ON SCREEN ADVANCE */
   }
 
 
@@ -947,15 +943,17 @@
   @keyframes progressGlowPulse {
     0%, 100% {
       box-shadow:                              /* STANDARD GLOW AT START AND END OF LOOP */
-        0 0 6px rgba(254, 170, 53, 0.7),
-        0 0 12px rgba(254, 170, 53, 0.6),
-        0 0 20px rgba(254, 170, 53, 0.5);
+        0 0 8px rgba(254, 170, 53, 0.9),
+        0 0 20px rgba(254, 170, 53, 0.8),
+        0 0 35px rgba(254, 170, 53, 0.6),
+        0 0 50px rgba(254, 170, 53, 0.3);
     }
     50% {
       box-shadow:                              /* INTENSIFIED GLOW AT MID-POINT OF LOOP */
-        0 0 10px rgba(254, 170, 53, 0.9),
-        0 0 18px rgba(254, 170, 53, 0.8),
-        0 0 30px rgba(254, 170, 53, 0.7);
+        0 0 14px rgba(255, 200, 50, 1),
+        0 0 30px rgba(254, 170, 53, 1),
+        0 0 55px rgba(254, 170, 53, 0.8),
+        0 0 80px rgba(254, 170, 53, 0.4);
     }
   }
 

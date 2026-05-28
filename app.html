@@ -260,7 +260,27 @@ if (isHub) {
   };
 
 
-  nextBtn.onclick = () => {
+function spawnEmojis(e) {
+  const emojis = ["😄","🧠","⚡","🙂","💡","✨","🎯","💥", "🎉"];
+  const count = 5;
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement("span");
+    el.className = "emoji-burst";
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    // SPREAD EMOJIS RANDOMLY AROUND THE TAP POINT
+    el.style.left = (e.clientX + (Math.random() - 0.5) * 60) + "px";
+    el.style.top  = (e.clientY + (Math.random() - 0.5) * 40) + "px";
+    el.style.animationDelay = (Math.random() * 0.15) + "s";
+    document.body.appendChild(el);
+    // REMOVE FROM DOM AFTER ANIMATION ENDS
+    setTimeout(() => el.remove(), 1200);
+  }
+}
+
+nextBtn.onclick = (e) => {
+  spawnEmojis(e);
+
+
     const level = levels[levelIndex];
     if (current < level.length - 1) {
       render(++current);
@@ -342,6 +362,25 @@ window.goToHub = () => {
   document.getElementById("main-stylesheet").href = "style.css?v=" + Date.now();
 </script>
 
+
+
+
+<style>
+/* EMOJI BURST — FLOATING PARTICLES ON NEXT BUTTON TAP */
+.emoji-burst {
+  position: fixed;
+  font-size: 1.6rem;
+  pointer-events: none;
+  z-index: 9999;
+  animation: emojiFly 1s ease-out forwards;
+  user-select: none;
+}
+
+@keyframes emojiFly {
+  0%   { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-120px) scale(1.4); }
+}
+</style>
 
 
 </body>
