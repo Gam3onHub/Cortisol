@@ -1375,15 +1375,25 @@
 
 
 
-  /* WIN SCREEN IMAGE — PLAYS ENTRANCE THEN CONTINUOUS GLOW */
+/* WIN SCREEN IMAGE — PLAYS ENTRANCE THEN CONTINUOUS GLOW */
   .win-screen img {
-    width: 75% !important;       /* FILLS FULL CARD WIDTH */
-    max-width: 300px !important;  /* CAPS AT 370PX */
+    width: 75% !important;        /* FILLS FULL CARD WIDTH */
+    max-width: 300px !important;  /* CAPS AT 300PX */
     max-height: 75vh !important;  /* CAPS AT 75% VIEWPORT HEIGHT */
     animation:
       winEntrance 1.1s ease-out forwards,               /* RUNS ONCE ON LOAD */
       winGlow 2s ease-in-out 1.1s infinite;             /* STARTS AFTER ENTRANCE, LOOPS FOREVER */
   }
+
+  /* MOBILE ONLY — SHRINKS WIN IMAGE SO GLOW DOESN'T GET CLIPPED */
+  @media (max-width: 480px) {
+    .win-screen img {
+      width: 60% !important;        /* SMALLER ON MOBILE TO GIVE GLOW ROOM */
+      max-width: 220px !important;  /* TIGHTER CAP ON MOBILE */
+      max-height: 60vh !important;  /* SHORTER CAP ON MOBILE */
+    }
+  }
+  
 
 
   /* ============================================================

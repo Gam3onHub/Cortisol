@@ -122,8 +122,7 @@ window.switchLang = (newLang) => {
     newUrl.searchParams.set('lang', lang);
     window.history.replaceState({}, '', newUrl);
 
-    // RE-RENDER THE CURRENT SCREEN WITH NEW LANGUAGE
-    render(current);
+
   };
 
   // SINGLE TOGGLE FUNCTION — FLIPS BETWEEN PT AND EN ON CLICK
@@ -249,8 +248,16 @@ if (isHub) {
     nextBtn.style.visibility = "visible";
     navBg.src = "three-buttons-locked.svg";
   }
+} else {
+  /* NON-HUB MODE — SWAP NAV SVG TO MATCH SCREEN POSITION */
+  if (i === 0) {
+    backBtn.style.visibility = "hidden";
+    navBg.src = "three-button-locked-forward.svg";
+  } else {
+    backBtn.style.visibility = "visible";
+    navBg.src = "three-buttons-locked.svg";
+  }
 }
-
       contentArea.classList.remove("fade-out");
     }, 100);
   }
@@ -297,6 +304,8 @@ const nextLevel = levelIndex + 1;
     if (nextLevel > currentMax) {
       localStorage.setItem("maxUnlockedLevel", nextLevel);
     }
+    /* RESET FONT SIZE TO DEFAULT BEFORE LEAVING SO MENUS ARE NOT AFFECTED BY ZOOM */
+    document.documentElement.style.fontSize = "16px";
     if (nextLevel < levels.length) {
       window.location.href = `menu0${nextLevel + 1}.html?lang=${lang}`;
     } else {
@@ -310,7 +319,15 @@ const nextLevel = levelIndex + 1;
   if (toggle && lang === 'en') toggle.classList.add('en');
   render(current);
 
-  document.querySelector(".bottom-nav").style.opacity = "1";
+  /* HIDE NAV COMPLETELY BEFORE FIRST RENDER TO PREVENT BUTTON FLASH ON MOBILE */
+  document.querySelector(".bottom-nav").style.opacity = "0";
+  render(current);
+  /* SHORT DELAY LETS RENDER() FINISH SETTING BUTTON VISIBILITY BEFORE FADING NAV IN */
+  setTimeout(() => {
+    document.querySelector(".bottom-nav").style.transition = "opacity 0.3s ease";
+    document.querySelector(".bottom-nav").style.opacity = "1";
+  }, 80);
+
   document.body.style.transition = "opacity 0.3s ease";
   document.body.style.opacity = "1";
 });
@@ -341,10 +358,14 @@ window.changeSize = (direction) => {
 applySize(); // APPLY SAVED SIZE ON PAGE LOAD
 
 window.goHome = () => {
+  /* RESET FONT SIZE TO DEFAULT BEFORE LEAVING SO MENUS ARE NOT AFFECTED BY ZOOM */
+  document.documentElement.style.fontSize = "16px";
   window.location.href = "index.html";
 };
 
 window.goToHub = () => {
+  /* RESET FONT SIZE TO DEFAULT BEFORE LEAVING SO MENUS ARE NOT AFFECTED BY ZOOM */
+  document.documentElement.style.fontSize = "16px";
   const currentLang = new URLSearchParams(window.location.search).get("lang") || "pt";
   document.body.style.transition = "opacity 0.4s ease";
   document.body.style.opacity = "0";
