@@ -155,7 +155,12 @@ window.switchLang = (newLang) => {
     setTimeout(() => {
       contentArea.innerHTML = "";
 
-      if (screenId === "L4_S19") {
+if (screenId === "L4_S19") {
+        /* IF REVIEWING FROM HUB — SKIP WIN SCREEN AND GO STRAIGHT BACK TO MENU05 */
+        if (fromHub) {
+          window.location.href = "menu05.html?lang=" + lang;
+          return;
+        }
         contentArea.classList.add("win-screen");
 bottomNav.style.display = "none";
 progressContainer.style.display = "none";
