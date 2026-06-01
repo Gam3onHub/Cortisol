@@ -49,8 +49,8 @@ document.getElementById("dino-img").src = lang === "en" ? "nofffa6-ENG.svg" : "n
 
 // CONGRATS TEXT
 const text = {
-  pt: "Parabéns por completar esta leitura!<br><br>Aprender sobre a nossa saúde é sempre tempo bem investido e aumenta o nosso amor-próprio!",
-  en: "Congratulations on completing this reading!<br><br>Learning about our health is always time well invested and increases our self-love!"
+  pt: "Parabéns por completar esta leitura!<br><br>Aprender sobre a nossa saúde <br>é sempre tempo bem investido <br>e aumenta o nosso amor próprio!",
+  en: "Congratulations on completing this reading!<br><br>Learning about our health <br>is always time well invested <br>and increases our self-love!"
 };
 document.getElementById("congrats-text").innerHTML = text[lang] || text.pt;
 
@@ -90,10 +90,10 @@ const menu = document.getElementById("levelMenu");
   coinWrap.appendChild(number);
   item.appendChild(coinWrap);
 
-  item.onclick = () => {
+item.onclick = () => {
     document.body.classList.add("fade-out");
     setTimeout(() => {
-      window.location.href = `app.html?level=${n - 1}&lang=${lang}&from=hub`;
+      window.location.href = `app.html?level=${n - 1}&lang=${lang}&from=hub&t=${Date.now()}`;
     }, 300);
   };
 
