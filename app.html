@@ -324,9 +324,12 @@ const nextLevel = levelIndex + 1;
 
   render(current);
 
-  document.querySelector(".bottom-nav").style.opacity = "1";
-  document.body.style.transition = "opacity 0.3s ease";
-  document.body.style.opacity = "1";
+/* WAIT FOR RENDER'S INTERNAL 100MS TIMEOUT TO COMPLETE BEFORE SHOWING ANYTHING */
+    setTimeout(() => {
+    document.querySelector(".bottom-nav").style.opacity = "1";
+    document.body.style.transition = "opacity 0.3s ease";
+    document.body.style.opacity = "1";
+  }, 150);
 });
 
 history.pushState(null, "", location.href);
