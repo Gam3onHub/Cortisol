@@ -438,8 +438,9 @@
      3-BUTTON NAV LAYOUT — BACK, HOME, AND NEXT POSITIONS 
      DEFAULT LAYOUT WHEN NOT ON A HUB SCREEN
      ============================================================ */
-  .back-btn {
+.back-btn {
     left: -6px; /* POSITIONS BACK BUTTON NEAR THE LEFT EDGE OF NAV BAR */
+    visibility: hidden; /* HIDDEN BY DEFAULT — JS OVERRIDES THIS WHEN PAST SCREEN 1 */
   }
 
   .home-btn {
