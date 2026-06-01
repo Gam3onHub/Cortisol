@@ -314,15 +314,15 @@ const nextLevel = levelIndex + 1;
   };
 
 
-// SET INITIAL TOGGLE STATE OF LANGUAGE BUTTON ON PAGE LOAD
+/* HIDE NAV COMPLETELY BEFORE FIRST RENDER TO PREVENT BUTTON FLASH ON MOBILE */
+  document.querySelector(".bottom-nav").style.opacity = "0";
+
+  // SET INITIAL TOGGLE STATE OF LANGUAGE BUTTON ON PAGE LOAD
   const toggle = document.getElementById('lang-toggle');
   if (toggle && lang === 'en') toggle.classList.add('en');
-  render(current);
 
-  /* HIDE NAV COMPLETELY BEFORE FIRST RENDER TO PREVENT BUTTON FLASH ON MOBILE */
-  document.querySelector(".bottom-nav").style.opacity = "0";
-  render(current);
   /* SHORT DELAY LETS RENDER() FINISH SETTING BUTTON VISIBILITY BEFORE FADING NAV IN */
+  render(current);
   setTimeout(() => {
     document.querySelector(".bottom-nav").style.transition = "opacity 0.3s ease";
     document.querySelector(".bottom-nav").style.opacity = "1";
