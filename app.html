@@ -48,7 +48,7 @@
     <nav class="bottom-nav" id="bottomNav">
       <img class="nav-bg" id="nav-bg" src="three-buttons-locked.svg" alt="">
 
-<button class="nav-btn back-btn" style="visibility:hidden">
+      <button class="nav-btn back-btn" style="visibility:hidden">
         <img src="left.svg" alt="Previous">
       </button>
 
@@ -335,6 +335,13 @@ const nextLevel = levelIndex + 1;
 history.pushState(null, "", location.href);
 window.addEventListener("popstate", () => {
   history.pushState(null, "", location.href);
+});
+
+/* FORCES FULL PAGE RELOAD ON IOS CHROME WHEN RETURNING FROM CACHE — PREVENTS BUTTON FLASH */
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted) {
+    window.location.reload();
+  }
 });
 
 // SIZE CONTROL — STEPS THROUGH FONT AND IMAGE SIZES
