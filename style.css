@@ -1002,7 +1002,7 @@
     width: 100%;                /* FILLS FULL PARENT WIDTH */
   }
 
-  /* DINO/CHARACTER IMAGE USED IN MENU05 SCREENS */
+/* DINO/CHARACTER IMAGE USED IN MENU05 SCREENS */
   .menu05-img {
     width: 100% !important;      /* FORCES FULL WIDTH */
     max-width: 250px !important; /* CAPS AT 250PX */
@@ -1010,7 +1010,17 @@
     max-height: 260px !important; /* PREVENTS IMAGE FROM BEING TOO TALL */
     object-fit: contain !important; /* SCALES WITHOUT CROPPING */
     align-self: flex-start;       /* ALIGNS IMAGE TO TOP OF FLEX ROW */
+    animation: dinoBreath 4s ease-in-out infinite; /* SLOW BREATHING LOOP */
+    transform-origin: bottom center; /* SCALES FROM THE BOTTOM SO FEET STAY GROUNDED */
   }
+
+  /* SLOW BREATHING — GENTLE GROW AND SHRINK */
+  @keyframes dinoBreath {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.06); } /* GROWS BY 6% AT MID-POINT */
+  }
+
+  
 
   /* WRAPPER FOR A SINGLE LEVEL COIN AND ITS NUMBER */
   .menu05-level {
