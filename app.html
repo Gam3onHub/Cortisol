@@ -107,6 +107,10 @@ window.addEventListener("load", async () => {
   const nextBtn = document.querySelector(".bottom-nav img[alt='Next']").closest("button");
   const bottomNav = document.getElementById("bottomNav");
 
+  /* HIDE BACK BUTTON IMMEDIATELY ON PAGE LOAD — PREVENTS FLASH ON IOS CHROME */
+  /* RENDER() WILL SHOW IT AGAIN IF NEEDED BASED ON SCREEN INDEX */
+  backBtn.style.visibility = "hidden";
+
 
 
   // 2. ADDED LANGUAGE SWITCHER LOGIC
