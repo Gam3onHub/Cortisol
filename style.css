@@ -1386,7 +1386,7 @@
   }
 
   /* MOBILE ONLY — SHRINKS WIN IMAGE SO GLOW DOESN'T GET CLIPPED */
-  @media (max-width: 480px) {
+  @media (max-width: 380px) {
     .win-screen img {
       width: 60% !important;        /* SMALLER ON MOBILE TO GIVE GLOW ROOM */
       max-width: 220px !important;  /* TIGHTER CAP ON MOBILE */
