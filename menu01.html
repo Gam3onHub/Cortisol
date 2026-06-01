@@ -61,8 +61,8 @@ function getLang() {
 function startLevel(levelIndex) {
   const lang = getLang();
   document.body.classList.add("fade-out");
-  setTimeout(() => {
-    window.location.href = `app.html?level=${levelIndex}&screen=0&lang=${lang}`;
+setTimeout(() => {
+    window.location.href = `app.html?level=${levelIndex}&screen=0&lang=${lang}&t=${Date.now()}`;
   }, 300);
 }
 

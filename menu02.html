@@ -52,7 +52,10 @@ function getLang() {
 
 function startLevel(levelIndex) {
   const lang = getLang();
-  window.location.href = `app.html?level=${levelIndex}&screen=0&lang=${lang}`;
+  document.body.classList.add("fade-out");
+  setTimeout(() => {
+    window.location.href = `app.html?level=${levelIndex}&screen=0&lang=${lang}&t=${Date.now()}`;
+  }, 300);
 }
 
 function goHome() {
@@ -91,11 +94,10 @@ if (savedLevel >= 2) {
   document.body.style.opacity = "1";
 }
 // INIT
+document.body.style.transition = "opacity 0.3s ease";
 setSpeech();
 setProgress();
 
-setSpeech();
-setProgress();
 history.pushState(null, "", location.href);
 window.addEventListener("popstate", () => {
   history.pushState(null, "", location.href);
